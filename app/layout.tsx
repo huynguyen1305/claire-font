@@ -27,7 +27,7 @@ export default function RootLayout({
                   <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="/about">Về chúng tôi</a>
+                  <a href="/ve-chung-toi">Về chúng tôi</a>
                 </li>
                 <li>
                   <a href="/dich-vu">Dịch vụ</a>

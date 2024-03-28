@@ -1,10 +1,14 @@
 import React from "react";
-import rezenerate from "@/assets/images/rezenerate.png";
+
 import Image from "next/image";
-// import { Image } from "antd";
+import Link from "next/link";
 
 const CardService = ({ data }: any) => {
   if (!data) return null;
+  // const handleClick = async () => {
+  //   console.log(data);
+  //   data.onclick();
+  // };
   return (
     <div
       className="w-full h-full flex flex-col"
@@ -24,11 +28,36 @@ const CardService = ({ data }: any) => {
           {data.title}
         </h4>
 
-        <p className="text-center whitespace-pre-line">{data.description}</p>
+        <div className="text-justify whitespace-pre-line">
+          {data.description}
+        </div>
 
-        <button type="button" className="font-bold buttonWhite">
-          {data.button}
-        </button>
+        <div className="w-full flex justify-center gap-4 flex-wrap lg:flex-nowrap">
+          {data?.button?.length > 0 &&
+            data?.button.map((item: any, idx: number) => {
+              return (
+                <button
+                  key={idx}
+                  type="button"
+                  className={`font-bold w-full ${
+                    idx / 2 === 0 ? "buttonWhite" : "buttonBlack"
+                  }`}
+                  // onClick={handleClick}
+                >
+                  {item?.link ? (
+                    <Link
+                      href={`${item?.link}`}
+                      className="w-full inline-block"
+                    >
+                      {item?.title}
+                    </Link>
+                  ) : (
+                    item?.title
+                  )}
+                </button>
+              );
+            })}
+        </div>
       </div>
     </div>
   );

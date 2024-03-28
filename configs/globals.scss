@@ -132,3 +132,31 @@ h6 {
     @apply bg-black text-white;
   }
 }
+
+
+.ant-collapse-header {
+  padding: 1rem 0 !important;
+}
+.ant-collapse-content-box {
+  padding: 0 0 1rem 0 !important;
+}
+
+.itemFAQ {
+  @apply mx-4 my-8 font-bold cursor-pointer text-xl text-gray-400 relative w-fit;
+  transition: all 0.2s linear;
+  &:hover{
+    @apply font-extrabold text-black;
+  }
+  &.active{
+    @apply font-extrabold text-black;
+    &::after{
+      @apply absolute bottom-0;
+      right: -2rem;
+      content: "\27A4";
+    }
+  }
+}
+
+.ant-collapse-expand-icon {
+  flex-shrink: 0;
+}
