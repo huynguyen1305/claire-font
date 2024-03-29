@@ -1,5 +1,8 @@
+"use client";
+
 import { Divider, Flex, Typography } from "antd";
 import React from "react";
+import useBreakpoint from "antd/lib/grid/hooks/useBreakpoint";
 
 const mockdata = [
   {
@@ -35,52 +38,78 @@ const mockdata = [
 ];
 
 const LocationSection = () => {
+  const { xl } = useBreakpoint();
   return (
-    <Flex vertical className="px-40" gap={80}>
+    <Flex vertical className="px-10 md:px-20 xl:px-40" gap={xl ? 80 : 40}>
       {mockdata.map((i, idx) => {
         const even = idx % 2 === 0;
         return (
           <Flex vertical key={i.location} gap={80}>
             <Flex
-              className={`${!even ? "flex-row-reverse" : "flex-row"}`}
-              gap={80}
+              className={`flex-col-reverse ${
+                !even ? "xl:flex-row-reverse" : "xl:flex-row"
+              }`}
+              gap={xl ? 80 : 40}
             >
               <Flex
                 vertical
-                className="w-[60%]"
+                className="w-full xl:w-[60%]"
                 style={{ boxShadow: "4px 4px 6px #ACB0BA" }}
               >
                 <img alt="img" src={i.img} className="object-cover w-full" />
-                <Flex vertical gap={12} className="p-20">
-                  <Typography className="text-2xl text-gray-400">
+                <Flex vertical gap={12} className="p-10 md:p-20">
+                  <Typography className="text-base sm:text-lg md:text-xl 2xl:text-2xl text-gray-400">
                     9AM-7PM
                   </Typography>
-                  <Typography className="text-2xl font-extrabold">
+                  <Typography className="text-base sm:text-lg md:text-xl 2xl:text-2xl font-extrabold">
                     {i.location}
                   </Typography>
-                  <Typography className="text-2xl">{i.address}</Typography>
-                  <Typography className="text-2xl">{i.phone}</Typography>
-                  <Typography className="text-2xl">{i.email}</Typography>
-                  <Typography className="text-3xl border-2 border-black w-full text-center py-5 mt-10">
+                  <Typography className="text-base sm:text-lg md:text-xl 2xl:text-2xl">
+                    {i.address}
+                  </Typography>
+                  <Typography className="text-base sm:text-lg md:text-xl 2xl:text-2xl">
+                    {i.phone}
+                  </Typography>
+                  <Typography className="text-base sm:text-lg md:text-xl 2xl:text-2xl">
+                    {i.email}
+                  </Typography>
+                  <Typography className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl border-2 border-black w-full text-center py-5 mt-10">
                     ĐẶT LỊCH TẠI CƠ SỞ
                   </Typography>
                 </Flex>
               </Flex>
-              <Flex vertical className="w-[40%]" justify="space-between">
-                <Flex vertical gap={12}>
-                  <Typography className="text-7xl font-extrabold leading-[92px] pt-10 text-nowrap">
-                    {i.location.split(" ")[0]}
-                    <br />
-                    {i.location.split(" ").slice(1).join(" ")}
-                  </Typography>
-                  <Typography className="text-xl font-semibold">
+              <Flex
+                vertical
+                className="w-full xl:w-[40%]"
+                justify="space-between"
+                gap={xl ? 20 : 32}
+              >
+                <Flex
+                  vertical
+                  gap={xl ? 20 : 32}
+                  className="text-center xl:text-left"
+                >
+                  {xl ? (
+                    <Typography className="text-3xl md:text-5xl 2xl:text-7xl font-extrabold md:leading-[68px] xl:leading-[72px] 2xl:leading-[92px] pt-0 xl:pt-10 xl:text-nowrap">
+                      {i.location.split(" ")[0]}
+                      <br />
+                      {i.location.split(" ").slice(1).join(" ")}
+                    </Typography>
+                  ) : (
+                    <Typography className="text-2xl sm:text-3xl md:text-5xl font-extrabold md:leading-[68px] xl:leading-[72px] 2xl:leading-[92px] pt-0 xl:pt-10 xl:text-nowrap">
+                      {i.location}
+                    </Typography>
+                  )}
+                  <Typography className="text-base sm:text-lg 2xl:text-xl font-semibold">
                     {i.location_description}
                   </Typography>
                 </Flex>
                 <Flex vertical gap={20}>
-                  <Typography className="text-xl font-semibold">
-                    Google map
-                  </Typography>
+                  {xl && (
+                    <Typography className="text-xl font-semibold">
+                      Google map
+                    </Typography>
+                  )}
                   <img
                     alt="img"
                     src={i.mapImg}
@@ -90,8 +119,12 @@ const LocationSection = () => {
               </Flex>
             </Flex>
             {idx !== mockdata.length - 1 && (
-              <div className={`w-1/3 ${!even ? "self-end" : "self-start"}`}>
-                <Divider className="bg-gray-400" />
+              <div
+                className={`w-full xl:w-1/3 ${
+                  !even ? "self-end" : "self-start"
+                }`}
+              >
+                <Divider className="bg-gray-400 m-0" />
               </div>
             )}
           </Flex>
