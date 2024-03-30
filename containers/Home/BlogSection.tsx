@@ -38,13 +38,13 @@ const BlogSection = () => {
           <Col key={item.title} span={8}>
             <Flex vertical gap={16}>
               <img alt="img" src={item.imgSrc} className="w-full" />
-              <Typography className="text-xl text-gray-500 font-extrabold">
+              <Typography className="text-base md:text-lg xl:text-xl text-gray-500 font-extrabold">
                 {item.title}
               </Typography>
-              <Typography className="text-base text-gray-500">
+              <Typography className="text-sm md:text-md xl:text-base text-gray-500">
                 {item.description}
               </Typography>
-              <Typography className="underline text-sm font-light cursor-pointer">
+              <Typography className="underline text-xs xl:text-sm font-light cursor-pointer">
                 READ MORE
               </Typography>
             </Flex>
