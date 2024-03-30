@@ -1,10 +1,16 @@
-import { Typography } from "antd";
-import Image from "next/image";
+import BlogSection from "@/containers/Home/BlogSection";
+import ContentSection from "@/containers/Home/ContentSection";
+import FormSection from "@/containers/Home/FormSection";
+import WelcomeSection from "@/containers/Home/WelcomeSection";
+import { Flex } from "antd";
 
 export default function Home() {
   return (
-    <section className="">
-      <Typography>hello</Typography>
-    </section>
+    <Flex vertical gap={80}>
+      <WelcomeSection />
+      <ContentSection />
+      <BlogSection />
+      <FormSection />
+    </Flex>
   );
 }
