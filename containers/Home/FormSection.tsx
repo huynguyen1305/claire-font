@@ -4,15 +4,19 @@ import React from "react";
 
 const FormSection = () => {
   return (
-    <Flex className="px-20 2xl:px-32 pb-20 flex-col xl:flex-row xl:gap-20">
+    <Flex className="2xl:px-32 pb-20 flex-col xl:flex-row xl:gap-20">
       <img
         alt="img"
         src="/contact-hompage.png"
         className="w-full xl:w-2/3 h-full object-cover"
       />
-      <Flex vertical className="pt-20 w-full xl:w-1/3" gap={32}>
+      <Flex
+        vertical
+        className="px-10 xl:px-20 xl:px-0 pt-20 w-full xl:w-1/3"
+        gap={32}
+      >
         <Flex vertical className="" gap={8}>
-          <text className="text-3xl font-extrabold text-gray-700">
+          <text className="text-2xl xl:text-3xl font-extrabold text-gray-700">
             Tư vấn miễn phí
           </text>
           <text className="text-gray-500">

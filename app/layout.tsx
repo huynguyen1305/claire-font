@@ -38,7 +38,7 @@ export default function RootLayout({
               </ul>
             </nav>
           </header>
-          <main className="min-h-screen">
+          <main className="min-h-screen w-full">
             <div>{children}</div>
           </main>
           <footer className="border-t-2 p-4 h-[200px] bg-zinc-800 text-zinc-200">
