@@ -4,11 +4,11 @@ import React from "react";
 
 const FormSection = () => {
   return (
-    <Flex className="2xl:px-32 pb-20 flex-col xl:flex-row xl:gap-20">
+    <Flex className="pb-20 flex-col items-center lg:flex-row lg:gap-10">
       <img
         alt="img"
         src="/contact-hompage.png"
-        className="w-full xl:w-2/3 h-full object-cover"
+        className="w-full lg:w-2/3 h-full object-cover"
       />
       <Flex
         vertical

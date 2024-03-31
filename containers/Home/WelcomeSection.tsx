@@ -1,7 +1,14 @@
 "use client";
 
-import { Col, Flex, Image, Row, Typography } from "antd";
+import { Col, Flex, Row, Typography } from "antd";
+import Image from "next/image";
 import React from "react";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import anhNen from "@/assets/images/anh-nen.jpg";
+import hydra from "@/assets/images/hydra.png";
+import rezenerate from "@/assets/images/rezenerate.png";
 
 const guaranteeData = [
   { imageSrc: "", text1: "TRỊ LIỆU", text2: "CHUẨN Y KHOA" },
@@ -12,13 +19,27 @@ const guaranteeData = [
 
 const WelcomeSection = () => {
   return (
-    <Flex vertical gap={60} align="center">
-      <Image
-        preview={false}
-        alt="image"
-        src="/homepage-header.png"
-        className="px-5 pt-10"
-      />
+    <Flex vertical align="center">
+      <Swiper
+        slidesPerView={1}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="swiperContainer"
+      >
+        <SwiperSlide>
+          <Image width={1920} height={800} alt="image" src={anhNen} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image width={1920} height={800} alt="image" src={hydra} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image width={1920} height={800} alt="image" src={rezenerate} />
+        </SwiperSlide>
+      </Swiper>
       <Flex
         vertical
         gap={40}

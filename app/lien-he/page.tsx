@@ -4,7 +4,7 @@ import { Flex } from "antd";
 
 export default function DiaDiemPage() {
   return (
-    <Flex vertical className="py-20 gap-20 xl:gap-40">
+    <Flex vertical className="py-20 gap-20 lg:gap-40">
       <HeaderSection />
       <LocationSection />
     </Flex>
