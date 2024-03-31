@@ -6,13 +6,13 @@ import { Flex } from "antd";
 
 export default function Home() {
   return (
-    <div className="container">
-      <Flex vertical gap={80}>
-        <WelcomeSection />
-        <ContentSection />
-        <BlogSection />
-        <FormSection />
-      </Flex>
-    </div>
+    <Flex vertical gap={80}>
+      <WelcomeSection />
+      <ContentSection />
+
+      <BlogSection />
+
+      <FormSection />
+    </Flex>
   );
 }

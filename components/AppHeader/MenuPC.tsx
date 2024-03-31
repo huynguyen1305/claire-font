@@ -14,13 +14,13 @@ const MenuPC = () => {
     <header>
       <nav>
         <ul className="flex justify-between items-center container gap-4 uppercase font-extrabold text-xl pb-2">
-          <li className="w-[180px] text-center">
+          <li className="w-[180px] text-center hidden lg:block">
             <Link href="/">Trang chủ</Link>
           </li>
-          <li className="w-[180px] text-center">
+          <li className="w-[180px] text-center hidden lg:block">
             <Link href="/ve-chung-toi">Về chúng tôi</Link>
           </li>
-          <li className="text-center">
+          <li className="mx-auto">
             <Link href="/">
               <Image
                 src={claireLogo}
@@ -31,7 +31,7 @@ const MenuPC = () => {
             </Link>
           </li>
           <li
-            className="flex items-center w-[180px] text-center relative"
+            className="items-center w-[180px] text-center relative hidden lg:flex"
             onMouseOver={() => setShowSubMenu(true)}
             onMouseLeave={() => setShowSubMenu(false)}
           >
@@ -66,7 +66,7 @@ const MenuPC = () => {
               </div>
             </div>
           </li>
-          <li className="w-[180px] text-center">
+          <li className="w-[180px] text-center hidden lg:block">
             <Link href="/lien-he">Liên hệ</Link>
           </li>
         </ul>

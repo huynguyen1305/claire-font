@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: "",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="vi">
       <Config>
         <body>
-          <Suspense fallback={<div>aa</div>}>
+          <Suspense fallback={<div></div>}>
             <AppHeader />
           </Suspense>
           <main className="min-h-screen">

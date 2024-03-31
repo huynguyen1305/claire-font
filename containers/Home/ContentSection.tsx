@@ -12,26 +12,26 @@ const CommonComponent = (
 ) => (
   <Flex
     className={`${
-      shouldRevert ? "flex-col xl:flex-row-reverse" : "flex-col xl:flex-row"
-    } w-full items-center xl:items-start`}
+      shouldRevert ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
+    } w-full items-center lg:items-start`}
   >
     <img alt="image" src={imgSrc} className="w-1/2" />
     <Flex
-      className={`pt-[5%] xl:pt-[10%] w-full xl:w-1/2 text-center ${
+      className={`pt-[5%] lg:pt-[10%] w-full lg:w-1/2 text-center ${
         shouldRevert
-          ? "xl:text-left xl:items-start xl:pr-10"
-          : "xl:text-right xl:items-end xl:pl-10"
+          ? "lg:text-left lg:items-start lg:pr-10"
+          : "lg:text-right lg:items-end lg:pl-10"
       }`}
       vertical
       gap={20}
     >
-      <Typography className="text-xl md:text-2xl xl:text-3xl text-gray-500 font-extrabold">
+      <Typography className="text-xl md:text-2xl lg:text-3xl text-gray-500 font-extrabold">
         {title}
       </Typography>
-      <Typography className="text-sm md:text-base xl:text-lg text-gray-500 xl:leading-10">
+      <Typography className="text-sm md:text-base lg:text-lg text-gray-500 lg:leading-10">
         {description}
       </Typography>
-      <Typography className="py-2 px-10 text-sm xl:text-base font-semibold text-white bg-gray-800 w-fit mx-auto xl:mx-0">
+      <Typography className="py-2 px-10 text-sm lg:text-base font-semibold text-white bg-gray-800 w-fit mx-auto lg:mx-0">
         {category}
       </Typography>
     </Flex>
@@ -40,12 +40,8 @@ const CommonComponent = (
 
 const ContentSection = () => {
   return (
-    <>
-      <Flex
-        vertical
-        className="px-10 xl:px-32 gap-[40px] xl:gap-0"
-        align="center"
-      >
+    <div className="container">
+      <Flex vertical className="gap-[40px] lg:gap-0" align="center">
         {CommonComponent(
           "/detail-homepage-1.png",
           "TRỊ LIỆU CHUẨN Y KHOA",
@@ -66,26 +62,27 @@ const ContentSection = () => {
           "SẢN PHẨM"
         )}
         <Flex
-          className="pt-[28px] xl:pt-[5%] xl:w-1/2 self-start text-center xl:text-left"
+          className="pt-[28px] lg:pt-[5%] lg:w-1/2 self-start text-center lg:text-left"
           vertical
           gap={20}
         >
-          <Typography className="text-xl md:text-2xl xl:text-3xl text-gray-500 font-extrabold">
+          <Typography className="text-xl md:text-2xl lg:text-3xl text-gray-500 font-extrabold">
             SẢN PHẨM & DỊCH VỤ MINH BẠCH
           </Typography>
-          <Typography className="text-sm md:text-base xl:text-lg text-gray-500 xl:leading-10">
+          <Typography className="text-sm md:text-base lg:text-lg text-gray-500 lg:leading-10">
             Chúng tôi luôn sử dụng các sản phẩm từ những thương hiệu dược mỹ
             phẩm cao cấp và uy tín của thế giới. Hệ thống dịch vụ sử dụng những
             máy móc công nghệ cao hàng trên toàn thế giới trong lĩnh vực thẩm mỹ
             được công nhận và đạt chứng chỉ như CE, FDA Approved
           </Typography>
-          <Typography className="py-2 px-10 text-sm xl:text-base font-semibold text-white bg-gray-800 w-fit mx-auto xl:mx-0">
+          <Typography className="py-2 px-10 text-sm lg:text-base font-semibold text-white bg-gray-800 w-fit mx-auto lg:mx-0">
             SẢN PHẨM
           </Typography>
         </Flex>
       </Flex>
+      <br />
       <Image preview={false} alt="img" src="/home-page-content.png" />
-    </>
+    </div>
   );
 };
 
