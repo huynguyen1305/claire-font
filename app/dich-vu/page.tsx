@@ -9,6 +9,7 @@ import rezenerate from "@/assets/images/rezenerate.png";
 import hydra from "@/assets/images/hydra.png";
 import chamsocdatainha from "@/assets/images/cham-soc-da-tai-nha.png";
 import tuvan11 from "@/assets/images/tu-van-1-1.png";
+import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
 
 const DichVuPage = () => {
   const dataChamSocDa = [
@@ -245,7 +246,7 @@ Công nghệ Nano đang đóng góp rất nhiều trong sự phát triển của
   ];
   return (
     <div>
-      <div className="w-full h-[500px] bg-slate-500">Banner</div>
+      <CarouselContainer />
       <div className="container py-10 flex flex-col gap-10">
         <section className="border-2 px-10 py-8 flex flex-col gap-8">
           <h2 className="text-3xl lg:text-5xl text-center uppercase font-extrabold">

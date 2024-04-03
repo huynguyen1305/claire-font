@@ -3,6 +3,7 @@ import CardService from "@/components/CardService/CardService";
 import FAQService from "@/components/FAQService/FAQService";
 
 import hydra from "@/assets/images/hydra.png";
+import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
 
 const HydraFacialPage = () => {
   const dataTriLieu = [
@@ -86,7 +87,7 @@ Hydra Facial không chỉ là một trị liệu thẩm mỹ. Đó là một tr�
   ];
   return (
     <div>
-      <div className="w-full h-[500px] bg-slate-500">Banner</div>
+      <CarouselContainer />
       <div className="container py-10 flex flex-col gap-10">
         <section className="flex flex-col gap-8">
           <h3 className="text-3xl text-center uppercase font-extrabold">

@@ -4,11 +4,12 @@ import aboutPrivate from "@/assets/images/about-private.png";
 import aboutDoiNgu from "@/assets/images/about-doingu.png";
 import aboutSanPham from "@/assets/images/about-sanpham.png";
 import Image from "next/image";
+import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
 
 const page = () => {
   return (
     <div>
-      <div className="w-full h-[500px] bg-slate-500">Banner</div>
+      <CarouselContainer />
       <div className="py-10 flex flex-col">
         <section className="container py-10 mb-10 flex flex-col gap-8">
           <h2 className="text-3xl lg:text-5xl text-center uppercase font-extrabold">
@@ -24,21 +25,21 @@ const page = () => {
         <section className="bg-gray-100 flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-1 lg:p-10">
-              <h4 className="text-2xl uppercase font-extrabold text-center lg:text-left">
+              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-left">
                 Sức mạnh và giá trị
               </h4>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Claire /kleər/ trong tiếng Pháp đơn giản là sạch sẽ và tươi sáng
                 và cũng có nghĩa là trong sáng và minh bạch. Đó cũng là tên gọi
                 thân yêu cho một cô bé hoặc cậu bé.
               </p>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Trong thị trường thẩm mỹ “vàng thau lẫn lộn”, thật giả khó
                 lường. Claire mong muốn là đơn vị uy tín, với tiêu chuẩn y khoa
                 chính thống và máy móc hiện đại, minh bạch không có sự pha trộn
                 tạp chất hay đánh lận khái niệm trong làm đẹp.
               </p>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Trên hết, không theo đuổi vẻ đẹp nhân tạo theo các tiêu chuẩn
                 vàng, các khái niệm sắc đẹp thay đổi liên tục, Claire luôn đặt
                 sức khoẻ làn da, vẻ đẹp tự nhiên là kim chỉ nang trong điều trị
@@ -59,10 +60,10 @@ const page = () => {
         <section className=" flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-2 lg:p-10">
-              <h4 className="text-2xl uppercase font-extrabold text-center lg:text-right">
+              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-right">
                 Private
               </h4>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Từ khoá đại hiện cho hình ảnh của Claire, là một trong những số
                 ít cơ sở thật sự đề cao và tập trung vào tôn trọng sự bảo mật
                 thông tin, sự riêng tư của khách hàng khi đến điều trị cũng như
@@ -84,16 +85,16 @@ const page = () => {
         <section className="bg-gray-100 flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-1 lg:p-10">
-              <h4 className="text-2xl uppercase font-extrabold text-center lg:text-left">
+              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-left">
                 Đội ngũ nhân lực
               </h4>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Đội ngũ bác sĩ và nhân viên y khoa tận tâm, giàu kinh nghiệm
                 chính là niềm tự hào và tài sản vô giá của CLAIRE PRIVATE
                 CLINIC, là bảo chứng hùng hồn cho chất lượng điều trị & dịch vụ
                 của chúng tôi.
               </p>
-              <p className="text-justify w-full">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
                 Bác sĩ chuyên khoa của chúng tôi được đào tạo từ những trường
                 Đại học hàng đầu đã được cấp phép và có thẩm quyền, chúng tôi
                 chỉ thực hiện các kỹ thuật mới nhất và chính thống. Đảm bảo tất
@@ -115,14 +116,14 @@ const page = () => {
         <section className=" flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-2 lg:p-10">
-              <h4 className="text-2xl uppercase font-extrabold text-center lg:text-right">
+              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-right">
                 Sản phẩm và dịch vụ minh bạch
               </h4>
-              <p className="text-justify w-full ">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full ">
                 Chúng tôi luôn sử dụng các sản phẩm từ những thương hiệu dược mỹ
                 phẩm cao cấp và uy tín của thế giới.
               </p>
-              <p className="text-justify w-full ">
+              <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full ">
                 Hệ thống dịch vụ sử dụng những máy móc công nghệ cao hàng đầu
                 trên toàn thế giới trong lĩnh vực thẩm mỹ được công nhận và đạt
                 chứng chỉ như CE, FDA Approved

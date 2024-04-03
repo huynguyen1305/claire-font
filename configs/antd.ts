@@ -5,12 +5,15 @@ export const antdTheme: ThemeConfig = {
     Typography: {
       lineHeight: 1.2,
       fontSize: 16,
-      fontFamily: "'Mulish', sans-serif",
+      // fontFamily: "inherit",
     },
     Button: {
       primaryColor: "#FFFFFF",
       borderRadius: 0,
       defaultBg: "#000000",
     },
+  },
+  token: {
+    fontFamily: "inherit",
   },
 };

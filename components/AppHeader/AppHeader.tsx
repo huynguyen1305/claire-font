@@ -1,6 +1,3 @@
-"use client";
-
-import { Suspense } from "react";
 import MenuPC from "./MenuPC";
 
 const AppHeader = () => {
@@ -18,9 +15,7 @@ const AppHeader = () => {
           </div>
         </div>
       </div>
-      <Suspense fallback={<div></div>}>
-        <MenuPC />
-      </Suspense>
+      <MenuPC />
     </>
   );
 };

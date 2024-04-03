@@ -30,18 +30,16 @@ const mockdata = [
 const BlogSection = () => {
   return (
     <Flex vertical gap={60} align="center" className="container">
-      <Typography className="text-4xl text-gray-700 font-extrabold">
-        BLOG
-      </Typography>
+      <Typography className="text-4xl font-extrabold">BLOG</Typography>
       <Row gutter={[20, 20]}>
         {mockdata.map((item) => (
           <Col key={item.title} span={8}>
             <Flex vertical gap={16}>
               <img alt="img" src={item.imgSrc} className="w-full" />
-              <Typography className="text-base md:text-lg lg:text-xl text-gray-500 font-extrabold">
+              <Typography className="text-base md:text-lg lg:text-xl font-extrabold">
                 {item.title}
               </Typography>
-              <Typography className="text-sm md:text-md lg:text-base text-gray-500">
+              <Typography className="text-sm md:text-md lg:text-base">
                 {item.description}
               </Typography>
               <Typography className="underline text-xs lg:text-sm font-light cursor-pointer">
@@ -51,7 +49,7 @@ const BlogSection = () => {
           </Col>
         ))}
       </Row>
-      <Typography className="bg-gray-300 px-20 py-4 underline text-gray-700 font-bold text-xl cursor-pointer">
+      <Typography className="bg-gray-300 px-20 py-4 underline font-bold text-xl cursor-pointer">
         Xem thêm
       </Typography>
     </Flex>

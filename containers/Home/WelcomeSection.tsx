@@ -3,78 +3,64 @@
 import { Col, Flex, Row, Typography } from "antd";
 import Image from "next/image";
 import React from "react";
-import { Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import anhNen from "@/assets/images/anh-nen.jpg";
-import hydra from "@/assets/images/hydra.png";
-import rezenerate from "@/assets/images/rezenerate.png";
+import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
+
+import minhbach from "@/assets/images/minhbach.png";
+import phuongphap from "@/assets/images/phuongphap.png";
+import riengtu from "@/assets/images/riengtu.png";
+import trilieu2 from "@/assets/images/trilieu2.png";
 
 const guaranteeData = [
-  { imageSrc: "", text1: "TRỊ LIỆU", text2: "CHUẨN Y KHOA" },
-  { imageSrc: "", text1: "PHƯƠNG PHÁP", text2: "ĐIỀU TRỊ 1:1" },
-  { imageSrc: "", text1: "RIÊNG TƯ &", text2: "TIÊU CHUẨN CAO" },
-  { imageSrc: "", text1: "SẢN PHẨM &", text2: "DỊCH VỤ MINH BẠCH" },
+  { imageSrc: trilieu2, text1: "TRỊ LIỆU", text2: "CHUẨN Y KHOA" },
+  { imageSrc: phuongphap, text1: "PHƯƠNG PHÁP", text2: "ĐIỀU TRỊ 1:1" },
+  { imageSrc: riengtu, text1: "RIÊNG TƯ &", text2: "TIÊU CHUẨN CAO" },
+  { imageSrc: minhbach, text1: "SẢN PHẨM &", text2: "DỊCH VỤ MINH BẠCH" },
 ];
 
 const WelcomeSection = () => {
   return (
     <Flex vertical align="center">
-      <Swiper
-        slidesPerView={1}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="container swiperContainer"
-      >
-        <SwiperSlide>
-          <Image width={1920} height={800} alt="image" src={anhNen} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image width={1920} height={800} alt="image" src={hydra} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image width={1920} height={800} alt="image" src={rezenerate} />
-        </SwiperSlide>
-      </Swiper>
+      <CarouselContainer />
       <Flex
         vertical
         gap={40}
         align="center"
-        className="w-full bg-gray-100 pt-10 pb-28 px-5"
+        className="w-full bg-gray-100 pt-10 pb-20 px-5"
       >
-        <Typography className="text-2xl lg:text-3xl font-extrabold mb-10">
-          CHÚNG TÔI CAM KẾT
-        </Typography>
-        <Row
-          gutter={[
-            { xl: 60, xs: 5, lg: 5, md: 5, sm: 5 },
-            { xl: 60, xs: 30, lg: 30, md: 30, sm: 30 },
-          ]}
-          className="px-5 max-w-[600px] lg:max-w-none"
-        >
-          {guaranteeData.map((i) => (
-            <Col
-              key={i.text1}
-              className="flex flex-col gap-5 items-center"
-              span={12}
-              xl={{ span: 6 }}
-            >
-              <div className="w-32 h-32 rounded-[50%] bg-gray-300"></div>
-              <Flex vertical gap={4}>
-                <Typography className="text-center text-gray-500 text-sm lg:text-base">
-                  {i.text1}
-                </Typography>
-                <Typography className="text-center text-sm lg:text-base font-bold text-gray-600">
-                  {i.text2}
-                </Typography>
-              </Flex>
-            </Col>
-          ))}
-        </Row>
+        <div className="container">
+          <Typography className="text-3xl lg:text-5xl font-extrabold mb-10 text-center text-black">
+            CHÚNG TÔI CAM KẾT
+          </Typography>
+          <br />
+          <Row className="px-5 max-w-[600px] lg:max-w-none mx-auto">
+            {guaranteeData.map((i) => (
+              <Col
+                key={i.text1}
+                className="flex flex-col gap-8 items-center mx-auto"
+                span={12}
+                lg={{ span: 6 }}
+              >
+                {/* <div className="w-32 h-32 rounded-[50%] bg-gray-300"></div> */}
+                <Image
+                  width={150}
+                  height={150}
+                  alt="image"
+                  className="w-32 h-32 rounded-[50%] cursor-pointer"
+                  src={i.imageSrc}
+                />
+                <Flex vertical gap={4}>
+                  <Typography className="text-center text-gray-500 text-sm lg:text-base">
+                    {i.text1}
+                  </Typography>
+                  <Typography className="text-center text-sm lg:text-base font-bold text-gray-600">
+                    {i.text2}
+                  </Typography>
+                </Flex>
+              </Col>
+            ))}
+          </Row>
+        </div>
       </Flex>
       <Flex
         vertical
@@ -90,17 +76,17 @@ const WelcomeSection = () => {
             TRỊ LIỆU TIÊU CHUẨN Y KHOA CHÍNH THỐNG
           </Typography>
         </Flex>
-        <Typography className="text-base lg:text-lg md:text-xl text-gray-500 max-w-[800px]">
+        <Typography className="text-base lg:text-lg max-w-[800px]">
           Chúng tôi cùng với niềm đam mê về chăm sóc sức khoẻ làn da, chào đón
           bạn đến với trung tâm của Claire, nơi bạn sẽ được{" "}
-          <text className="font-extrabold">
+          <span className="font-extrabold">
             chăm sóc bằng sự ân cần, chuyên nghiệp và riêng tư nhất.
-          </text>
+          </span>
         </Typography>
 
-        <Typography className="text-base md:text-lg font-extrabold text-gray-500 px-10 py-2 border-2 border-gray-500">
+        <button type="button" className="buttonWhite">
           CƠ SỞ GẦN NHẤT
-        </Typography>
+        </button>
       </Flex>
     </Flex>
   );

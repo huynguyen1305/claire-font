@@ -17,15 +17,15 @@ const HeaderSection = () => {
         <Image alt="image" preview={false} src="/home-page-content.png" />
       ) : (
         <>
-          <Typography className="text-3xl sm:text-5xl md:text-6xl font-extrabold">
-            Địa điểm
+          <Typography className="text-3xl lg:text-5xl uppercase font-extrabold">
+            LIÊN HỆ
           </Typography>
-          <Typography className="text-lg sm:text-xl md:text-2xl font-bold">
+          <Typography className="text-lg font-bold">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.
           </Typography>
-          <Typography className="text-base sm:text-lg md:text-xl font-medium">
+          <Typography className="text-base font-medium">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
             ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor

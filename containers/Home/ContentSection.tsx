@@ -13,11 +13,11 @@ const CommonComponent = (
   <Flex
     className={`${
       shouldRevert ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
-    } w-full items-center lg:items-start`}
+    } w-full items-center lg:items-center`}
   >
     <img alt="image" src={imgSrc} className="w-1/2" />
     <Flex
-      className={`pt-[5%] lg:pt-[10%] w-full lg:w-1/2 text-center ${
+      className={`w-full mt-4 lg:w-1/2 text-center ${
         shouldRevert
           ? "lg:text-left lg:items-start lg:pr-10"
           : "lg:text-right lg:items-end lg:pl-10"
@@ -25,15 +25,13 @@ const CommonComponent = (
       vertical
       gap={20}
     >
-      <Typography className="text-xl md:text-2xl lg:text-3xl text-gray-500 font-extrabold">
+      <Typography className="text-xl md:text-2xl lg:text-3xl font-extrabold">
         {title}
       </Typography>
-      <Typography className="text-sm md:text-base lg:text-lg text-gray-500 lg:leading-10">
+      <Typography className="text-sm md:text-base lg:text-lg lg:leading-10">
         {description}
       </Typography>
-      <Typography className="py-2 px-10 text-sm lg:text-base font-semibold text-white bg-gray-800 w-fit mx-auto lg:mx-0">
-        {category}
-      </Typography>
+      <button className="buttonBlack">{category}</button>
     </Flex>
   </Flex>
 );
@@ -61,7 +59,14 @@ const ContentSection = () => {
           "Bảo vệ riêng tư và cá nhân hoá cho từng khách hàng là ưu tiên cao nhất Claire. Chúng tôi luôn cố gắng mang đến cho khách hàng trải nghiệm điều trị riêng biệt ở tiêu chuẩn cao nhất.",
           "SẢN PHẨM"
         )}
-        <Flex
+        {CommonComponent(
+          "/detail-homepage-4.png",
+          "SẢN PHẨM & DỊCH VỤ MINH BẠCH",
+          "Chúng tôi luôn sử dụng các sản phẩm từ những thương hiệu dược mỹ phẩm cao cấp và uy tín của thế giới. Hệ thống dịch vụ sử dụng những máy móc công nghệ cao hàng trên toàn thế giới trong lĩnh vực thẩm mỹ được công nhận và đạt chứng chỉ như CE, FDA Approved",
+          "TÌM HIỂU",
+          true
+        )}
+        {/* <Flex
           className="pt-[28px] lg:pt-[5%] lg:w-1/2 self-start text-center lg:text-left"
           vertical
           gap={20}
@@ -78,10 +83,11 @@ const ContentSection = () => {
           <Typography className="py-2 px-10 text-sm lg:text-base font-semibold text-white bg-gray-800 w-fit mx-auto lg:mx-0">
             SẢN PHẨM
           </Typography>
-        </Flex>
+        </Flex> */}
       </Flex>
       <br />
-      <Image preview={false} alt="img" src="/home-page-content.png" />
+      <br />
+      <br />
     </div>
   );
 };

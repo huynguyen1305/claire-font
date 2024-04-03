@@ -1,6 +1,11 @@
-import { Button, Divider, Flex, Input, Select, Typography } from "antd";
+import { Divider, Flex, Input, Select, Typography } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
+
+import facebook from "@/assets/images/fb-02.svg";
+import ins from "@/assets/images/ins-01.svg";
+import mess from "@/assets/images/mess-03.svg";
+import Image from "next/image";
 
 const FormSection = () => {
   return (
@@ -11,20 +16,21 @@ const FormSection = () => {
           src="/contact-hompage.png"
           className="w-full lg:w-2/3 h-full object-cover"
         />
-        <Flex vertical className="px-10 lg:px-6 pt-20 w-full lg:w-1/3">
+        <Flex vertical className="mt-4 lg:px-6 w-full lg:w-1/3">
           <Flex vertical className="" gap={8}>
-            <text className="text-2xl lg:text-3xl font-extrabold text-gray-700">
+            <div className="text-2xl lg:text-3xl font-extrabold">
               Tư vấn miễn phí
-            </text>
-            <text className="text-gray-500">
+            </div>
+            <div className="">
               Hãy là người đầu tiên nhận được các thông tin mới nhất về trị
               liệu,
               <br />
-              <text className="font-extrabold">
+              <p className="font-extrabold">
                 Ưu đãi và cập nhật từ Claire Wellness
-              </text>
-            </text>
+              </p>
+            </div>
           </Flex>
+          <br />
           <Flex vertical gap={20}>
             <Input
               placeholder="Họ Tên..."
@@ -35,31 +41,33 @@ const FormSection = () => {
             <Input placeholder="Email..." variant="borderless" />
             <Divider className="m-0 bg-gray-300" />
             <Input placeholder="Số điện thoại..." variant="borderless" />
+            <Divider className="m-0 bg-gray-300" />
             <TextArea
               placeholder="Dịch vụ cần tư vấn..."
-              variant="filled"
+              variant="outlined"
               rows={4}
             />
-            <Flex gap={2}>
+
+            <Flex className="gap-4 items-center">
               <Select
                 placeholder="Chọn chi nhánh"
-                variant="filled"
+                // variant="filled"
                 className="w-full"
                 size="large"
               />
-              <Button
-                className="px-8 bg-gray-800 text-white font-bold"
-                size="large"
-              >
-                GỬI
-              </Button>
+              <button className="buttonBlack">GỬI</button>
             </Flex>
           </Flex>
+          <br />
           <Flex vertical gap={12} align="center">
-            <Typography className="text-gray-600">
+            <Typography className="text-gray-600 capitalize">
               theo dõi chúng tôi tại
             </Typography>
-            <Flex>Icons</Flex>
+            <Flex className="gap-8">
+              <Image alt="Image" src={facebook} width={40} height={40} />
+              <Image alt="Image" src={ins} width={40} height={40} />
+              <Image alt="Image" src={mess} width={40} height={40} />
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

@@ -7,12 +7,15 @@ import "@/configs/globals.scss";
 import Config from "@/configs/config";
 import type { Metadata } from "next";
 import AppHeader from "@/components/AppHeader/AppHeader";
-import { Suspense } from "react";
+import AppFooter from "@/components/AppFooter/AppFooter";
+import { Mulish } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Claire",
+  title: "Claire Wellness",
   description: "",
 };
+
+const mulish = Mulish({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,
@@ -20,20 +23,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <Config>
-        <body>
-          <Suspense fallback={<div></div>}>
-            <AppHeader />
-          </Suspense>
+    <html lang="vi" className={mulish.className}>
+      <head>
+        <link rel="icon" href="/favicon.png" sizes="32x32" />
+      </head>
+      <body>
+        <Config>
+          <AppHeader />
           <main className="min-h-screen">
             <div>{children}</div>
           </main>
-          <footer className="border-t-2 p-4 h-[200px] bg-zinc-800 text-zinc-200">
-            Claire
-          </footer>
-        </body>
-      </Config>
+          <AppFooter />
+        </Config>
+      </body>
     </html>
   );
 }
