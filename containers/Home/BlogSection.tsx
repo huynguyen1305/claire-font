@@ -52,7 +52,7 @@ const BlogSection = ({ data }: { data: any }) => {
             </Flex>
           </Col>
         ))}
-        {mockdata.map((item) => (
+        {/* {mockdata.map((item) => (
           <Col key={item.title} span={8}>
             <Flex vertical gap={16}>
               <img alt="img" src={item.imgSrc} className="w-full" />
@@ -67,7 +67,7 @@ const BlogSection = ({ data }: { data: any }) => {
               </Typography>
             </Flex>
           </Col>
-        ))}
+        ))} */}
       </Row>
       <Typography className="bg-gray-300 px-20 py-4 underline font-bold text-xl cursor-pointer">
         Xem thêm
