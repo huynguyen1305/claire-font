@@ -20,5 +20,5 @@ const TranslationsProvider = React.memo<
 
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
 });
-
+TranslationsProvider.displayName = "TranslationsProvider";
 export default TranslationsProvider;
