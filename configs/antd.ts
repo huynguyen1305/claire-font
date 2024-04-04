@@ -12,6 +12,11 @@ export const antdTheme: ThemeConfig = {
       borderRadius: 0,
       defaultBg: "#000000",
     },
+    Select: {
+      optionSelectedColor: "red",
+      optionActiveBg: "rgba(0, 0, 0, 0.04)",
+      optionSelectedBg: "rgba(0, 0, 0, 0.1)",
+    },
   },
   token: {
     fontFamily: "inherit",

@@ -18,9 +18,7 @@ const FormSection = () => {
         />
         <Flex vertical className="mt-4 lg:px-6 w-full lg:w-1/3">
           <Flex vertical className="" gap={8}>
-            <div className="text-2xl lg:text-3xl font-extrabold">
-              Tư vấn miễn phí
-            </div>
+            <div className="text-3xl font-extrabold">Tư vấn miễn phí</div>
             <div className="">
               Hãy là người đầu tiên nhận được các thông tin mới nhất về trị
               liệu,

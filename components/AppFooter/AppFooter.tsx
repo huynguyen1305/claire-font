@@ -2,13 +2,15 @@ import React from "react";
 import logoWhite from "@/assets/images/claire-logo-white.svg";
 import Image from "next/image";
 import { Divider } from "antd";
+import LanguageChangerDropdown from "../LanguageChangerDropdown/LanguageChangerDropdown";
 
 const AppFooter = () => {
   return (
     <footer className="border-t-2 p-4 bg-zinc-800 text-zinc-200">
       <div className="container my-5">
-        <div>
+        <div className="flex justify-between">
           <Image width={150} height={150} alt="image" src={logoWhite} />
+          <LanguageChangerDropdown />
         </div>
         <br />
         <br />

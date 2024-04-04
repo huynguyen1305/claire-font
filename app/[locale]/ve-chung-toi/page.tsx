@@ -6,14 +6,24 @@ import aboutSanPham from "@/assets/images/about-sanpham.png";
 import Image from "next/image";
 import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
 
-const page = () => {
+import TranslationsProvider from "@/components/TranslationsProvider/TranslationsProvider";
+import initTranslations from "@/app/i18n";
+
+const i18nNamespaces = ["translation"];
+
+const page = async ({ params: { locale } }: any) => {
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
   return (
-    <div>
+    <TranslationsProvider
+      namespaces={i18nNamespaces}
+      locale={locale}
+      resources={resources}
+    >
       <CarouselContainer />
       <div className="py-10 flex flex-col">
         <section className="container py-10 mb-10 flex flex-col gap-8">
-          <h2 className="text-3xl lg:text-5xl text-center uppercase font-extrabold">
-            Claire Private Clinic
+          <h2 className="text-3xl text-center uppercase font-extrabold">
+            Claire Private Clinic {t("hello")}
           </h2>
           <p className="text-center lg:w-2/3 mx-auto">
             Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da
@@ -25,7 +35,7 @@ const page = () => {
         <section className="bg-gray-100 flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-1 lg:p-10">
-              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-left">
+              <h4 className="text-3xl uppercase font-extrabold text-center lg:text-left">
                 Sức mạnh và giá trị
               </h4>
               <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
@@ -60,7 +70,7 @@ const page = () => {
         <section className=" flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-2 lg:p-10">
-              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-right">
+              <h4 className="text-3xl uppercase font-extrabold text-center lg:text-right">
                 Private
               </h4>
               <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
@@ -85,7 +95,7 @@ const page = () => {
         <section className="bg-gray-100 flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-1 lg:p-10">
-              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-left">
+              <h4 className="text-3xl uppercase font-extrabold text-center lg:text-left">
                 Đội ngũ nhân lực
               </h4>
               <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full">
@@ -116,7 +126,7 @@ const page = () => {
         <section className=" flex flex-col gap-8 py-4 lg:py-0">
           <div className="container flex items-center flex-wrap gap-4 lg:gap-0 lg:flex-nowrap">
             <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 lg:order-2 lg:p-10">
-              <h4 className="text-xl md:text-2xl lg:text-3xl uppercase font-extrabold text-center lg:text-right">
+              <h4 className="text-3xl uppercase font-extrabold text-center lg:text-right">
                 Sản phẩm và dịch vụ minh bạch
               </h4>
               <p className="text-sm md:text-base lg:text-lg lg:leading-10 text-justify w-full ">
@@ -144,7 +154,7 @@ const page = () => {
         <br />
         <br />
       </div>
-    </div>
+    </TranslationsProvider>
   );
 };
 

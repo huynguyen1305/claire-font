@@ -25,9 +25,7 @@ const CommonComponent = (
       vertical
       gap={20}
     >
-      <Typography className="text-xl md:text-2xl lg:text-3xl font-extrabold">
-        {title}
-      </Typography>
+      <Typography className="text-3xl font-extrabold">{title}</Typography>
       <Typography className="text-sm md:text-base lg:text-lg lg:leading-10">
         {description}
       </Typography>

@@ -29,7 +29,7 @@ const WelcomeSection = () => {
         className="w-full bg-gray-100 pt-10 pb-20 px-5"
       >
         <div className="container">
-          <Typography className="text-3xl lg:text-5xl font-extrabold mb-10 text-center text-black">
+          <Typography className="text-3xl font-extrabold mb-10 text-center text-black">
             CHÚNG TÔI CAM KẾT
           </Typography>
           <br />
@@ -69,7 +69,7 @@ const WelcomeSection = () => {
         className="pt-10 px-10 text-center"
       >
         <Flex vertical gap={8} align="center">
-          <Typography className="text-2xl lg:text-3xl font-extrabold">
+          <Typography className="text-3xl font-extrabold">
             CHÀO MỪNG ĐẾN VỚI CLAIRE WELLNESS
           </Typography>
           <Typography className="text-xl lg:text-2xl font-bold text-gray-500">
