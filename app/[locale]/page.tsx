@@ -15,6 +15,8 @@ const getDataBlog = async () => {
   return res.json();
 };
 
+export const revalidate = 10;
+
 export default async function Home({ params: { locale } }: any) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
 

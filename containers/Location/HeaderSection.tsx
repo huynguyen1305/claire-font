@@ -13,26 +13,22 @@ const HeaderSection = () => {
       className="w-full md:max-w-[1280px] mx-auto px-10 md:px-20 text-center"
       align="center"
     >
-      {!xl ? (
-        <Image alt="image" preview={false} src="/home-page-content.png" />
-      ) : (
-        <>
-          <Typography className="text-3xl lg:text-5xl uppercase font-extrabold">
-            LIÊN HỆ
-          </Typography>
-          <Typography className="text-lg font-bold">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-          <Typography className="text-base font-medium">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit consectetur adipiscing elit.
-          </Typography>
-        </>
-      )}
+      <>
+        <Typography className="text-3xl uppercase font-extrabold">
+          LIÊN HỆ
+        </Typography>
+        <Typography className="text-lg font-bold">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit.
+        </Typography>
+        <Typography className="text-base font-medium">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
+          amet, consectetur adipiscing elit consectetur adipiscing elit.
+        </Typography>
+      </>
     </Flex>
   );
 };

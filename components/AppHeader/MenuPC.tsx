@@ -9,11 +9,14 @@ import claireLogo from "@/assets/images/claire-logo.svg";
 
 import { MenuOutlined } from "@ant-design/icons";
 import MenuMobile from "./MenuMobile";
+import { useTranslation } from "react-i18next";
 
 const MenuPC = () => {
   const [isShowSubMenu, setShowSubMenu] = useState(false);
 
   const [isOpenMenuSidebar, setOpenMenuSidebar] = useState(false);
+
+  const { t } = useTranslation();
 
   return (
     <header>
@@ -25,14 +28,14 @@ const MenuPC = () => {
             />
           </li>
           <li className="w-[180px] text-center hidden lg:block">
-            <Link href="/ve-chung-toi">Về chúng tôi</Link>
+            <Link href="/ve-chung-toi">{t("aboutUs")}</Link>
           </li>
           <li
             className="items-center w-[180px] text-center relative hidden lg:flex"
             onMouseOver={() => setShowSubMenu(true)}
             onMouseLeave={() => setShowSubMenu(false)}
           >
-            <Link href="/dich-vu">Dịch vụ</Link>
+            <Link href="/dich-vu">{t("service")}</Link>
             <CaretDownOutlined />
             <div
               style={{
@@ -51,7 +54,7 @@ const MenuPC = () => {
             >
               <div className="grid bg-white w-fit px-4">
                 <div className="w-[300px] text-center py-4">
-                  <Link href="/dich-vu/tu-van-da">Tư vấn da</Link>
+                  <Link href="/dich-vu/tu-van-da">{t("skinConsultation")}</Link>
                 </div>
                 <div className="w-[300px] text-center py-4">
                   <Link href="/dich-vu/hydra-facial">Hydra Facial</Link>
@@ -79,7 +82,7 @@ const MenuPC = () => {
             <Link href="/blog">Blog</Link>
           </li>
           <li className="w-[180px] text-center hidden lg:block">
-            <Link href="/lien-he">Liên hệ</Link>
+            <Link href="/lien-he">{t("contact")}</Link>
           </li>
           <li className="text-center block lg:hidden">
             {/* <MenuOutlined /> */}

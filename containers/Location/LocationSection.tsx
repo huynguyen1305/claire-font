@@ -90,13 +90,13 @@ const LocationSection = () => {
                   className="text-center lg:text-left"
                 >
                   {xl ? (
-                    <Typography className="text-3xl md:text-5xl 2lg:text-7xl font-extrabold md:leading-[68px] lg:leading-[72px] 2lg:leading-[92px] pt-0 lg:pt-10 lg:text-nowrap">
+                    <Typography className="text-3xl lg:text-5xl font-extrabold md:leading-[68px] lg:leading-[72px] 2lg:leading-[92px] pt-0 lg:pt-10 lg:text-nowrap">
                       {i.location.split(" ")[0]}
                       <br />
                       {i.location.split(" ").slice(1).join(" ")}
                     </Typography>
                   ) : (
-                    <Typography className="text-2xl sm:text-3xl md:text-5xl font-extrabold md:leading-[68px] lg:leading-[72px] 2lg:leading-[92px] pt-0 lg:pt-10 lg:text-nowrap">
+                    <Typography className="text-3xl lg:text-5xl font-extrabold md:leading-[68px] lg:leading-[72px] 2lg:leading-[92px] pt-0 lg:pt-10 lg:text-nowrap">
                       {i.location}
                     </Typography>
                   )}

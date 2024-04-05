@@ -12,7 +12,7 @@ import initTranslations from "@/app/i18n";
 const i18nNamespaces = ["translation"];
 
 const page = async ({ params: { locale } }: any) => {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { resources } = await initTranslations(locale, i18nNamespaces);
   return (
     <TranslationsProvider
       namespaces={i18nNamespaces}
@@ -23,7 +23,7 @@ const page = async ({ params: { locale } }: any) => {
       <div className="py-10 flex flex-col">
         <section className="container py-10 mb-10 flex flex-col gap-8">
           <h2 className="text-3xl text-center uppercase font-extrabold">
-            Claire Private Clinic {t("hello")}
+            Claire Private Clinic
           </h2>
           <p className="text-center lg:w-2/3 mx-auto">
             Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da
