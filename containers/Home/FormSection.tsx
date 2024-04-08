@@ -20,12 +20,10 @@ const FormSection = () => {
           <Flex vertical className="" gap={8}>
             <div className="text-3xl font-extrabold">Tư vấn miễn phí</div>
             <div className="">
-              Hãy là người đầu tiên nhận được các thông tin mới nhất về trị
-              liệu,
-              <br />
-              <p className="font-extrabold">
-                Ưu đãi và cập nhật từ Claire Wellness
-              </p>
+              Hãy là người đầu tiên nhận được các thông tin mới nhất về{" "}
+              <span className="font-extrabold">
+                Trị liệu, Ưu đãi và Cập nhật từ Claire Wellness
+              </span>
             </div>
           </Flex>
           <br />

@@ -34,13 +34,15 @@ const BlogSection = ({ data }: { data: any }) => {
       <Typography className="text-3xl font-extrabold">BLOG</Typography>
       <Row gutter={[20, 20]}>
         {data.slice(0, 3).map((item: any) => (
-          <Col key={item.id} span={8}>
+          <Col key={item.id} span={24} lg={8}>
             <Flex vertical gap={16} className="h-full">
-              <img
-                alt="img"
-                src={item.uagb_featured_image_src.full[0]}
-                className="w-full h-[220px]"
-              />
+              <Link href={`/blog/${item.slug}`}>
+                <img
+                  alt="img"
+                  src={item.uagb_featured_image_src.full[0]}
+                  className="w-full h-[220px]"
+                />
+              </Link>
               <Link href={`/blog/${item.slug}`}>
                 <Typography className="text-base md:text-lg lg:text-xl font-extrabold">
                   {item.title.rendered}

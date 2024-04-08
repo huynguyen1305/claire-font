@@ -17,7 +17,7 @@ const HeaderSection = () => {
         <Typography className="text-3xl uppercase font-extrabold">
           LIÊN HỆ
         </Typography>
-        <Typography className="text-lg font-bold">
+        {/* <Typography className="text-lg font-bold">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum
           dolor sit amet, consectetur adipiscing elit.
@@ -27,7 +27,7 @@ const HeaderSection = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum
           dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit
           amet, consectetur adipiscing elit consectetur adipiscing elit.
-        </Typography>
+        </Typography> */}
       </>
     </Flex>
   );

@@ -89,14 +89,22 @@ const MenuPC = () => {
           </li>
         </ul>
       </nav>
-      {isOpenMenuSidebar && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10">
-          <MenuMobile
-            isOpenMenuSidebar={isOpenMenuSidebar}
-            toggle={() => setOpenMenuSidebar(false)}
-          />
-        </div>
-      )}
+
+      <div
+        className="fixed w-full h-full bg-black bg-opacity-50 z-10 lg:hidden"
+        style={{
+          transition: "left 0.3s linear",
+          top: 0,
+          left: isOpenMenuSidebar ? "0%" : "-200%",
+          // opacity: isOpenMenuSidebar ? 1 : 0,
+          visibility: isOpenMenuSidebar ? "visible" : "hidden",
+        }}
+      >
+        <MenuMobile
+          isOpenMenuSidebar={isOpenMenuSidebar}
+          toggle={() => setOpenMenuSidebar(false)}
+        />
+      </div>
     </header>
   );
 };
