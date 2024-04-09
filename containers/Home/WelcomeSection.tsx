@@ -10,18 +10,28 @@ import minhbach from "@/assets/images/minhbach.png";
 import phuongphap from "@/assets/images/phuongphap.png";
 import riengtu from "@/assets/images/riengtu.png";
 import trilieu2 from "@/assets/images/trilieu2.png";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
-const guaranteeData = [
-  { imageSrc: trilieu2, text1: "TRỊ LIỆU", text2: "CHUẨN Y KHOA" },
-  { imageSrc: phuongphap, text1: "PHƯƠNG PHÁP", text2: "ĐIỀU TRỊ 1:1" },
-  { imageSrc: riengtu, text1: "RIÊNG TƯ &", text2: "TIÊU CHUẨN CAO" },
-  { imageSrc: minhbach, text1: "SẢN PHẨM &", text2: "DỊCH VỤ MINH BẠCH" },
-];
+import { Fade } from "react-awesome-reveal";
 
 const WelcomeSection = () => {
+  const { t } = useTranslation();
+  const guaranteeData = [
+    { imageSrc: trilieu2, text1: t("therapy"), text2: t("medicalStandard") },
+    { imageSrc: phuongphap, text1: t("method"), text2: t("treatment") },
+    { imageSrc: riengtu, text1: t("privateA"), text2: t("highQuality") },
+    {
+      imageSrc: minhbach,
+      text1: t("productA"),
+      text2: t("transparentService"),
+    },
+  ];
+
   return (
     <Flex vertical align="center">
       <CarouselContainer />
+
       <Flex
         vertical
         gap={40}
@@ -29,37 +39,40 @@ const WelcomeSection = () => {
         className="w-full bg-gray-100 pt-10 pb-20 px-5"
       >
         <div className="container">
-          <Typography className="text-3xl font-extrabold mb-10 text-center text-black">
-            CHÚNG TÔI CAM KẾT
-          </Typography>
+          <Fade direction="up">
+            <Typography className="text-3xl font-extrabold mb-10 text-center text-black">
+              {t("weCommit")}
+            </Typography>
+          </Fade>
           <br />
-          <Row className="px-5 max-w-[600px] lg:max-w-none mx-auto">
-            {guaranteeData.map((i) => (
-              <Col
-                key={i.text1}
-                className="flex flex-col gap-8 items-center mx-auto"
-                span={12}
-                lg={{ span: 6 }}
-              >
-                {/* <div className="w-32 h-32 rounded-[50%] bg-gray-300"></div> */}
-                <Image
-                  width={150}
-                  height={150}
-                  alt="image"
-                  className="w-32 h-32 rounded-[50%] cursor-pointer"
-                  src={i.imageSrc}
-                />
-                <Flex vertical gap={4}>
-                  <Typography className="text-center text-gray-500 text-sm lg:text-base">
-                    {i.text1}
-                  </Typography>
-                  <Typography className="text-center text-sm lg:text-base font-bold text-gray-600">
-                    {i.text2}
-                  </Typography>
-                </Flex>
-              </Col>
-            ))}
-          </Row>
+
+          <Fade direction="up" cascade delay={200}>
+            <ul className="px-5 flex max-w-[600px] lg:max-w-none mx-auto flex-wrap">
+              {guaranteeData.map((i) => (
+                <li
+                  key={i.text1}
+                  className="flex flex-col gap-8 items-center mx-auto w-1/2 lg:w-1/4"
+                >
+                  {/* <div className="w-32 h-32 rounded-[50%] bg-gray-300"></div> */}
+                  <Image
+                    width={150}
+                    height={150}
+                    alt="image"
+                    className="w-32 h-32 rounded-[50%] cursor-pointer"
+                    src={i.imageSrc}
+                  />
+                  <Flex vertical gap={4}>
+                    <Typography className="text-center text-gray-500 text-sm lg:text-base uppercase">
+                      {i.text1}
+                    </Typography>
+                    <Typography className="text-center text-sm lg:text-base font-bold text-gray-600 uppercase">
+                      {i.text2}
+                    </Typography>
+                  </Flex>
+                </li>
+              ))}
+            </ul>
+          </Fade>
         </div>
       </Flex>
       <Flex
@@ -68,25 +81,26 @@ const WelcomeSection = () => {
         align="center"
         className="pt-10 px-10 text-center"
       >
-        <Flex vertical gap={8} align="center">
-          <Typography className="text-3xl font-extrabold">
-            CHÀO MỪNG ĐẾN VỚI CLAIRE WELLNESS
+        <Fade direction="up" cascade>
+          <Flex vertical gap={8} align="center">
+            <Typography className="text-3xl font-extrabold">
+              {t("welcome")}
+            </Typography>
+            <Typography className="text-xl lg:text-2xl font-bold text-gray-500">
+              {t("descriptionWelcome")}
+            </Typography>
+          </Flex>
+          <Typography className="text-base lg:text-lg max-w-[800px]">
+            {t("detailWelcome")}
+            <span className="font-extrabold">{t("boldDetailWelcome")}</span>
           </Typography>
-          <Typography className="text-xl lg:text-2xl font-bold text-gray-500">
-            TRỊ LIỆU TIÊU CHUẨN Y KHOA CHÍNH THỐNG
-          </Typography>
-        </Flex>
-        <Typography className="text-base lg:text-lg max-w-[800px]">
-          Chúng tôi cùng với niềm đam mê về chăm sóc sức khoẻ làn da, chào đón
-          bạn đến với trung tâm của Claire, nơi bạn sẽ được{" "}
-          <span className="font-extrabold">
-            chăm sóc bằng sự ân cần, chuyên nghiệp và riêng tư nhất.
-          </span>
-        </Typography>
 
-        <button type="button" className="buttonWhite">
-          CƠ SỞ GẦN NHẤT
-        </button>
+          <Link href="/lien-he">
+            <button type="button" className="buttonWhite">
+              {t("nearest")}
+            </button>
+          </Link>
+        </Fade>
       </Flex>
     </Flex>
   );

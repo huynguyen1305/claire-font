@@ -5260,3 +5260,7 @@ blockquote {
   position: relative;
 }
 
+a:hover {
+ filter: brightness(110%) contrast(110%) grayscale(0%) saturate(110%);
+ transition: filter 0.3s linear;
+}

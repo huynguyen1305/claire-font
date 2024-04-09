@@ -37,12 +37,12 @@ const BlogPage = async () => {
                   className="text-sm md:text-md lg:text-base"
                   dangerouslySetInnerHTML={{ __html: item.uagb_excerpt }}
                 ></Typography>
-                <Link
+                {/* <Link
                   href={`/blog/${item.slug}`}
                   className="underline text-xs lg:text-sm font-light cursor-pointer mt-auto"
                 >
                   <Typography>READ MORE</Typography>
-                </Link>
+                </Link> */}
               </Flex>
             </Col>
           ))}

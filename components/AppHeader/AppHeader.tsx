@@ -1,3 +1,4 @@
+import Link from "next/link";
 import LanguageChangerDropdown from "../LanguageChangerDropdown/LanguageChangerDropdown";
 import MenuPC from "./MenuPC";
 
@@ -14,7 +15,10 @@ const AppHeader = () => {
             cho đơn hàng từ 2 sản phẩm
           </div>
           <div>
-            Hotline: <strong>08123456785</strong>
+            Hotline:{" "}
+            <Link href="tel:+84812345795">
+              <strong>08-12345-795</strong>
+            </Link>
           </div>
         </div>
       </div>

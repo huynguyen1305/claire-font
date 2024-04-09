@@ -5,6 +5,7 @@ import WelcomeSection from "@/containers/Home/WelcomeSection";
 import TranslationsProvider from "@/components/TranslationsProvider/TranslationsProvider";
 import { Flex, Image } from "antd";
 import initTranslations from "@/app/i18n";
+import ImageSection from "@/containers/Home/ImageSection";
 
 const i18nNamespaces = ["translation"];
 
@@ -31,7 +32,7 @@ export default async function Home({ params: { locale } }: any) {
       <Flex vertical gap={80}>
         <WelcomeSection />
         <ContentSection />
-        <Image preview={false} alt="img" src="/home-page-content.png" />
+        <ImageSection />
         <BlogSection data={dataBlog} />
         <FormSection />
       </Flex>

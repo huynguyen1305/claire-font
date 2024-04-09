@@ -80,29 +80,53 @@ const MenuMobile = ({ toggle, isOpenMenuSidebar }: any) => {
                 <div>
                   <strong className="text-base">Claire Thảo Điền:</strong>
                   <br />
-                  08-12345-795
+                  <Link href="tel:+84812345795">08-12345-795</Link>
                   <br />
-                  18 Trần Ngọc Diện, Phường Thảo Điền, Quận 2
+                  <Link
+                    href="https://maps.app.goo.gl/15cT2VSTuCcHB8Uf9"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    18 Trần Ngọc Diện, Phường Thảo Điền, Quận 2
+                  </Link>
                   <br />
-                  claire.thaodien@gmail.com
+                  <Link href="mailto:claire.thaodien@gmail.com">
+                    claire.thaodien@gmail.com
+                  </Link>
                 </div>
                 <div>
                   <strong className="text-base">Claire Phú Mỹ Hưng:</strong>
                   <br />
-                  08-12345-785
+                  <Link href="tel:+84812345785">08-12345-785</Link>
                   <br />
-                  42 Đường số 17, Phú Mỹ Hưng, Phường Tân Phú, Quận 7
+                  <Link
+                    href="https://maps.app.goo.gl/REXk4wVMhpCAcxWu8"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    42 Đường số 17, Phú Mỹ Hưng, Phường Tân Phú, Quận 7
+                  </Link>
                   <br />
-                  claire.pmt@gmail.com
+                  <Link href="mailto:claire.pmt@gmail.com">
+                    claire.pmt@gmail.com
+                  </Link>
                 </div>
                 <div>
                   <strong className="text-base">Claire Tân Bình:</strong>
                   <br />
-                  08-12345-795
+                  <Link href="tel:+84812345791">08-12345-791</Link>
                   <br />
-                  Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Quận Tân Bình
+                  <Link
+                    href="https://maps.app.goo.gl/4Gq5Z6hcnGemNjN99"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Quận Tân Bình
+                  </Link>
                   <br />
-                  claire.tanbinh@gmail.com
+                  <Link href="mailto:claire.tanbinh@gmail.com">
+                    claire.tanbinh@gmail.com
+                  </Link>
                 </div>
               </div>
             </div>
