@@ -7,14 +7,16 @@ import Link from "next/link";
 export const revalidate = 10;
 
 const getDetailPost = async (slug: any) => {
-  const res = await fetch(`https://claire.vn/wp-json/wp/v2/posts?slug=${slug}`);
+  const res = await fetch(
+    `https://claire.io.vn/wp-json/wp/v2/posts?slug=${slug}`
+  );
   const data = await res.json();
   return data[0];
 };
 
 const getRelatedPost = async () => {
   const res = await fetch(
-    `https://claire.vn/wp-json/wp/v2/posts?categories=40`
+    `https://claire.io.vn/wp-json/wp/v2/posts?categories=40`
   );
   const data = await res.json();
   return data;
@@ -36,7 +38,7 @@ export default async function DetailPage({
         <link
           rel="stylesheet"
           id="elementor-post-2506-css"
-          href="https://claire.vn/wp-content/uploads/elementor/css/post-2506.css?ver=1712229206"
+          href="https://claire.io.vn/wp-content/uploads/elementor/css/post-2506.css?ver=1712229206"
           media="all"
         />
       </Head>
