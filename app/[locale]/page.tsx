@@ -11,7 +11,7 @@ const i18nNamespaces = ["translation"];
 
 const getDataBlog = async () => {
   const res = await fetch(
-    "https://claire.vn/wp-json/wp/v2/posts?categories=40"
+    "https://claire.io.vn/wp-json/wp/v2/posts?categories=40"
   );
   return res.json();
 };
