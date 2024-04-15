@@ -8,7 +8,6 @@ import mess from "@/assets/images/mess-03.svg";
 
 import { Flex } from "antd";
 import LanguageChangerDropdown from "../LanguageChangerDropdown/LanguageChangerDropdown";
-import { useTranslation } from "react-i18next";
 import initTranslations from "@/app/i18n";
 import Link from "next/link";
 

@@ -7,7 +7,6 @@ import "@/configs/globals.scss";
 import Config from "@/configs/config";
 import type { Metadata } from "next";
 import AppHeader from "@/components/AppHeader/AppHeader";
-import AppFooter from "@/components/AppFooter/AppFooter";
 import { Mulish } from "next/font/google";
 import i18nConfig from "@/app/i18nConfig";
 import TranslationsProvider from "@/components/TranslationsProvider/TranslationsProvider";
@@ -19,6 +18,7 @@ import ins from "@/assets/images/ins-01.svg";
 import mess from "@/assets/images/mess-03.svg";
 import { Flex } from "antd";
 import Image from "next/image";
+import AppFooterV2 from "@/components/AppFooter/AppFooterV2";
 
 export const metadata: Metadata = {
   title: "Claire Wellness",
@@ -69,7 +69,7 @@ export default async function RootLayout({
             <main className="min-h-screen">
               <div>{children}</div>
             </main>
-            <AppFooter locale={locale} />
+            <AppFooterV2 locale={locale} />
             <div className="fixed bottom-[3%] right-[2%] z-10 ">
               <Flex className="gap-4 flex-col">
                 <BtnScrollToTop />
