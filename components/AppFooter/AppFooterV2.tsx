@@ -86,7 +86,7 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
               <Link href="tel:+84812345795">08-12345-785</Link>
               <Link href="tel:+84812345795">08-12345-795</Link>
             </Flex>
-            <p>Đăng ký nhận tin</p>
+            <p className="font-bold text-xl">Đăng ký nhận tin</p>
             <Flex>
               <Input placeholder="Email" />
               <Button type="primary" className="rounded-md">
@@ -99,7 +99,7 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
         <p>
           Claire Clinic mang đến những giải pháp làm đẹp không xâm lấn, an toàn
           và hiệu quả. Chúng tôi đã làm hài lòng hàng trăm nghìn khách hàng và
-          các liệu trình thẩm mỹ và sản phẩm chăn sóc sức khoẻ hàng đầu Châu Âu.
+          các liệu trình thẩm mỹ và sản phẩm chăm sóc sức khoẻ hàng đầu Châu Âu.
         </p>
         <p>
           Đội ngũ bác sĩ, y tá và chuyên gia tư vấn với chuyên môn cao có thể
