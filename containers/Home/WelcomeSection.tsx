@@ -1,6 +1,6 @@
 "use client";
 
-import { Col, Flex, Row, Typography } from "antd";
+import { Flex, Typography } from "antd";
 import Image from "next/image";
 import React from "react";
 

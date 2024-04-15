@@ -3,7 +3,7 @@ import ContentSection from "@/containers/Home/ContentSection";
 import FormSection from "@/containers/Home/FormSection";
 import WelcomeSection from "@/containers/Home/WelcomeSection";
 import TranslationsProvider from "@/components/TranslationsProvider/TranslationsProvider";
-import { Flex, Image } from "antd";
+import { Flex } from "antd";
 import initTranslations from "@/app/i18n";
 import ImageSection from "@/containers/Home/ImageSection";
 
