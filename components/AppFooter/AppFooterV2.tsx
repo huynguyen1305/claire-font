@@ -18,8 +18,8 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
   return (
     <footer className="border-t-2 p-4 bg-zinc-800 text-zinc-200">
       <div className="container my-5 flex flex-col gap-6">
-        <Flex justify="space-between" gap={20}>
-          <Flex gap={40} justify="space-evenly">
+        <Flex justify="space-between" gap={20} className="flex-col xl:flex-row">
+          <Flex gap={40} className="justify-between xl:justify-evenly">
             <Flex vertical gap={8}>
               <Image
                 width={150}
@@ -32,22 +32,25 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
                 href="https://maps.app.goo.gl/15cT2VSTuCcHB8Uf9"
                 target="_blank"
                 rel="noreferrer"
+                className="text-sm xl:text-base"
               >
-                18 Trần Ngọc Diện, P.Thảo Điền, Quận 2, TP.HCM
+                • 18 Trần Ngọc Diện, P.Thảo Điền, Quận 2, TP.HCM
               </Link>
               <Link
                 href="https://maps.app.goo.gl/REXk4wVMhpCAcxWu8"
                 target="_blank"
                 rel="noreferrer"
+                className="text-sm xl:text-base"
               >
-                42 Đường số 17, Phú Mỹ Hưng, P. Tân Phú, Quận 7
+                • 42 Đường số 17, Phú Mỹ Hưng, P. Tân Phú, Quận 7
               </Link>
               <Link
                 href="https://maps.app.goo.gl/4Gq5Z6hcnGemNjN99"
                 target="_blank"
                 rel="noreferrer"
+                className="text-sm xl:text-base"
               >
-                Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Q.Tân Bình
+                • Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Q.Tân Bình
               </Link>
               <Flex className="gap-8 ">
                 <Image alt="Image" src={facebook} width={30} height={30} />
@@ -55,57 +58,122 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
                 <Image alt="Image" src={mess} width={30} height={30} />
               </Flex>
             </Flex>
-            <Divider type="vertical" />
-            <Flex vertical gap={20}>
-              <p className="font-bold text-xl">Liên kết</p>
+            <Divider
+              type="vertical"
+              className="bg-white h-full hidden xl:block"
+            />
+            <Flex vertical gap={20} className="hidden sm:flex">
+              <p className="font-bold text-base xl:text-xl">{t("link")}</p>
               <Flex vertical gap={4}>
-                <Link href="/">Trang chủ</Link>
-                <Link href="/ve-chung-toi">Về chúng tôi</Link>
-                <Link href="/dich-vu">Dịch vụ</Link>
-                <Link href="/">Điều trị lão hoá</Link>
-                <Link href="/">Cảm nhận KH</Link>
-                <Link href="/lien-he">Địa điểm</Link>
-                <Link href="/blog">Blog</Link>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("homePage")}
+                </Link>
+                <Link href="/ve-chung-toi" className="text-sm xl:text-base">
+                  • {t("aboutUs")}
+                </Link>
+                <Link href="/dich-vu" className="text-sm xl:text-base">
+                  • {t("service")}
+                </Link>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("agingTreatment")}
+                </Link>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("customerFB")}
+                </Link>
+                <Link href="/lien-he" className="text-sm xl:text-base">
+                  • {t("address")}
+                </Link>
+                <Link href="/blog" className="text-sm xl:text-base">
+                  • {t("blog")}
+                </Link>
               </Flex>
             </Flex>
-            <Flex vertical gap={20}>
-              <p className="font-bold text-xl">Giờ mở cửa</p>
+            <Flex vertical gap={20} className="hidden md:flex">
+              <p className="font-bold text-base xl:text-xl">{t("openTime")}</p>
               <Flex vertical gap={4}>
-                <p>9AM - 7PM</p>
+                <p className="text-sm xl:text-base">• 9AM - 7PM</p>
               </Flex>
-              <p className="font-bold text-xl">Địa điểm</p>
+              <p className="font-bold text-base xl:text-xl">{t("location")}</p>
               <Flex vertical gap={4}>
-                <p>Tp. Hồ Chí Minh</p>
+                <p className="text-sm xl:text-base">• {t("hcmCity")}</p>
               </Flex>
             </Flex>
           </Flex>
-          <Flex vertical gap={20}>
-            <p className="font-bold text-xl">Gọi ngay</p>
-            <Flex vertical gap={2}>
-              <Link href="tel:+84812345795">08-12345-791</Link>
-              <Link href="tel:+84812345795">08-12345-785</Link>
-              <Link href="tel:+84812345795">08-12345-795</Link>
+          <Flex className="flex-row justify-between md:justify-normal xl:flex-col gap-5 md:gap-10 xl:gap-5">
+            <Flex vertical gap={20} className="flex sm:hidden">
+              <p className="font-bold text-base xl:text-xl">{t("link")}</p>
+              <Flex vertical gap={4}>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("homePage")}
+                </Link>
+                <Link href="/ve-chung-toi" className="text-sm xl:text-base">
+                  • {t("aboutUs")}
+                </Link>
+                <Link href="/dich-vu" className="text-sm xl:text-base">
+                  • {t("service")}
+                </Link>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("agingTreatment")}
+                </Link>
+                <Link href="/" className="text-sm xl:text-base">
+                  • {t("customerFB")}
+                </Link>
+                <Link href="/lien-he" className="text-sm xl:text-base">
+                  • {t("address")}
+                </Link>
+                <Link href="/blog" className="text-sm xl:text-base">
+                  • {t("blog")}
+                </Link>
+              </Flex>
             </Flex>
-            <p className="font-bold text-xl">Đăng ký nhận tin</p>
+            <Flex vertical gap={20} className="md:hidden">
+              <p className="font-bold text-base xl:text-xl">{t("openTime")}</p>
+              <Flex vertical gap={4}>
+                <p className="text-sm xl:text-base">• 9AM - 7PM</p>
+              </Flex>
+              <p className="font-bold text-base xl:text-xl">{t("location")}</p>
+              <Flex vertical gap={4}>
+                <p className="text-sm xl:text-base">• {t("hcmCity")}</p>
+              </Flex>
+            </Flex>
+            <Flex vertical gap={20}>
+              <p className="font-bold text-base xl:text-xl">{t("callNow")}</p>
+              <Flex vertical gap={2}>
+                <Link href="tel:+84812345795" className="text-sm xl:text-base">
+                  • 08-12345-791
+                </Link>
+                <Link href="tel:+84812345795" className="text-sm xl:text-base">
+                  • 08-12345-785
+                </Link>
+                <Link href="tel:+84812345795" className="text-sm xl:text-base">
+                  • 08-12345-795
+                </Link>
+              </Flex>
+            </Flex>
+            <Flex vertical gap={20} className="hidden sm:flex">
+              <p className="font-bold text-base xl:text-xl">{t("signUpNow")}</p>
+              <Flex>
+                <Input placeholder="Email" />
+                <Button type="primary" className="rounded-md">
+                  {t("send")}
+                </Button>
+              </Flex>
+              <LanguageChangerDropdown />
+            </Flex>
+          </Flex>
+          <Flex vertical gap={20} className="flex sm:hidden">
+            <p className="font-bold text-base xl:text-xl">{t("signUpNow")}</p>
             <Flex>
               <Input placeholder="Email" />
               <Button type="primary" className="rounded-md">
-                GỬI
+                {t("send")}
               </Button>
             </Flex>
             <LanguageChangerDropdown />
           </Flex>
         </Flex>
-        <p>
-          Claire Clinic mang đến những giải pháp làm đẹp không xâm lấn, an toàn
-          và hiệu quả. Chúng tôi đã làm hài lòng hàng trăm nghìn khách hàng và
-          các liệu trình thẩm mỹ và sản phẩm chăm sóc sức khoẻ hàng đầu Châu Âu.
-        </p>
-        <p>
-          Đội ngũ bác sĩ, y tá và chuyên gia tư vấn với chuyên môn cao có thể
-          đáp ứng từng nhu cầu riêng biệt của khách hàng, với phác đồ điều trị
-          phù hợp và dịch vụ chăm sóc chuyên nghiệp và an toàn nhất.
-        </p>
+        <p className="text-sm xl:text-base">{t("footerDes1")}</p>
+        <p className="text-sm xl:text-base">{t("footerDes2")}</p>
       </div>
     </footer>
   );
