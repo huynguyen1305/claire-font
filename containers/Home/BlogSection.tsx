@@ -8,20 +8,22 @@ import { useTranslation } from "react-i18next";
 
 const BlogSection = ({ data }: { data: any }) => {
   const { t } = useTranslation();
+  console.log(data);
   return (
     <Flex vertical gap={60} align="center" className="container">
-      <Fade direction="up">
+      <Fade direction="up" triggerOnce>
         <Typography className="text-3xl font-extrabold">BLOG</Typography>
       </Fade>
-      <Row gutter={[20, 20]}>
+
+      <Row gutter={[20, 20]} className="w-full">
         {data.slice(0, 3).map((item: any) => (
           <Col key={item.id} span={24} lg={8}>
-            <Fade cascade direction="up" damping={0.5}>
+            <Fade direction="up" damping={0.5} triggerOnce>
               <Flex vertical gap={16} className="h-full">
                 <Link href={`/blog/${item.slug}`}>
                   <img
                     alt="img"
-                    src={item.uagb_featured_image_src.full[0]}
+                    src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
                     className="w-full h-[220px]"
                   />
                 </Link>
@@ -43,24 +45,9 @@ const BlogSection = ({ data }: { data: any }) => {
             </Fade>
           </Col>
         ))}
-        {/* {mockdata.map((item) => (
-          <Col key={item.title} span={8}>
-            <Flex vertical gap={16}>
-              <img alt="img" src={item.imgSrc} className="w-full" />
-              <Typography className="text-base md:text-lg lg:text-xl font-extrabold">
-                {item.title}
-              </Typography>
-              <Typography className="text-sm md:text-md lg:text-base">
-                {item.description}
-              </Typography>
-              <Typography className="underline text-xs lg:text-sm font-light cursor-pointer">
-                READ MORE
-              </Typography>
-            </Flex>
-          </Col>
-        ))} */}
       </Row>
-      <Fade direction="up" delay={300}>
+
+      <Fade direction="up" delay={300} triggerOnce>
         <Link href="/blog">
           <Typography className="buttonBlack cursor-pointer uppercase">
             {t("seeMore")}

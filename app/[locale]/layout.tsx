@@ -20,10 +20,43 @@ import { Flex } from "antd";
 import Image from "next/image";
 import AppFooterV2 from "@/components/AppFooter/AppFooterV2";
 
-export const metadata: Metadata = {
-  title: "Claire Wellness",
-  description: "",
+const metaDataObj: Metadata = {
+  title: {
+    default:
+      "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    template:
+      "%s | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+  },
+  description:
+    "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp.",
+  openGraph: {
+    title: "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    description:
+      "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
+    url: "https://www.claire.vn",
+    siteName:
+      "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    images: [
+      {
+        url: "https://www.claire.vn/claire-og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    description:
+      "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp.",
+    site: "claire.vn",
+    images: ["https://www.claire.vn/claire-og.png"],
+  },
 };
+
+export const metadata: Metadata = metaDataObj;
 
 const mulish = Mulish({ subsets: ["latin"] });
 
@@ -46,17 +79,7 @@ export default async function RootLayout({
     <html lang={locale} className={mulish.className}>
       <head>
         <link rel="icon" href="/favicon.png" sizes="32x32" />
-        {/* OG image and tag */}
-        <meta property="og:title" content="Claire Wellness" />
-        <meta property="og:type" content="clinic" />
-        <meta property="og:url" content="https://claire.vn" />
-        <meta property="og:image" content="/claire-logo.svg" />
-        <meta property="og:site_name" content="Claire Wellness" />
-
-        <meta
-          property="og:description"
-          content="chào mừng đến với claire wellness Trị liệu tiêu chuẩn Y khoa chính thống Chúng tôi cùng với niềm đam mê về chăm sóc sức khoẻ làn da, chào đón bạn đến với những trung tâm của Claire, nơi bạn sẽ được chăm sóc bằng sự ân cần, chuyên nghiệp và riêng tư nhất"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="relative">
         <Config>

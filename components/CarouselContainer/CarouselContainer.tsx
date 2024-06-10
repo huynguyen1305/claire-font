@@ -12,7 +12,7 @@ import React from "react";
 
 const CarouselContainer = () => {
   return (
-    <div className="container">
+    <div className="w-full h-auto">
       <Swiper
         slidesPerView={1}
         loop={true}
@@ -28,7 +28,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full h-full object-cover"
+            className="w-full max-h-[800px] object-cover"
             src={anhNen}
           />
         </SwiperSlide>
@@ -37,7 +37,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full h-full object-cover"
+            className="w-full max-h-[800px] object-cover"
             src={hydra}
           />
         </SwiperSlide>
@@ -46,7 +46,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full h-full object-cover"
+            className="w-full max-h-[800px] object-cover"
             src={rezenerate}
           />
         </SwiperSlide>

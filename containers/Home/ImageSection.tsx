@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 const ImageSection = () => {
   return (
-    <Fade direction="up" duration={500}>
+    <Fade direction="up" duration={500} triggerOnce>
       <Image
         width={1920}
         height={800}

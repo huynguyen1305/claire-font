@@ -32,62 +32,40 @@ const WelcomeSection = () => {
     <Flex vertical align="center">
       <CarouselContainer />
 
-      <Flex
-        vertical
-        gap={40}
-        align="center"
-        className="w-full bg-gray-100 pt-10 pb-20 px-5"
-      >
-        <div className="container">
-          <Fade direction="up">
-            <Typography className="text-3xl font-extrabold mb-10 text-center text-black">
-              {t("weCommit")}
-            </Typography>
-          </Fade>
-          <br />
+      <div className="w-full bg-gray-100 pt-10 pb-20 px-5">
+        <Fade direction="up" triggerOnce>
+          <Typography className="text-3xl font-extrabold mb-10 text-center text-black">
+            {t("weCommit")}
+          </Typography>
+        </Fade>
 
-          <Fade direction="up" cascade delay={200}>
-            <ul className="px-5 flex max-w-[600px] lg:max-w-none mx-auto flex-wrap">
-              {guaranteeData.map((i) => (
-                <li
-                  key={i.text1}
-                  className="flex flex-col gap-8 items-center mx-auto w-1/2 lg:w-1/4"
-                >
-                  {/* <div className="w-32 h-32 rounded-[50%] bg-gray-300"></div> */}
-                  <Image
-                    width={150}
-                    height={150}
-                    alt="image"
-                    className="w-32 h-32 rounded-[50%] cursor-pointer"
-                    src={i.imageSrc}
-                  />
-                  <Flex vertical gap={4}>
-                    <Typography className="text-center text-gray-500 text-sm lg:text-base uppercase">
-                      {i.text1}
-                    </Typography>
-                    <Typography className="text-center text-sm lg:text-base font-bold text-gray-600 uppercase">
-                      {i.text2}
-                    </Typography>
-                  </Flex>
-                </li>
-              ))}
-            </ul>
-          </Fade>
-        </div>
-      </Flex>
-      <Flex
-        vertical
-        gap={40}
-        align="center"
-        className="pt-10 px-10 text-center"
-      >
-        <Fade direction="up" cascade>
-          <Flex vertical gap={8} align="center">
+        <Fade direction="up" cascade delay={200} triggerOnce>
+          <ul className="flex flex-wrap lg:max-w-6xl mx-auto">
+            {guaranteeData.map((i) => (
+              <li
+                key={i.text1}
+                className="flex flex-col items-center gap-4 w-1/2 lg:w-1/4 p-4 border hover:bg-black hover:text-white"
+                style={{ transition: "all 0.2s linear" }}
+              >
+                <Flex vertical gap={4}>
+                  <span className="text-center text-sm lg:text-base uppercase">
+                    {i.text1}
+                  </span>
+                  <span className="text-center text-sm lg:text-base font-bold uppercase">
+                    {i.text2}
+                  </span>
+                </Flex>
+              </li>
+            ))}
+          </ul>
+        </Fade>
+      </div>
+
+      <Fade direction="up" cascade triggerOnce>
+        <Flex vertical align="center" className="pt-10 px-4 text-center gap-6">
+          <Flex vertical className="gap-4">
             <Typography className="text-3xl font-extrabold">
               {t("welcome")}
-            </Typography>
-            <Typography className="text-xl lg:text-2xl font-bold text-gray-500">
-              {t("descriptionWelcome")}
             </Typography>
           </Flex>
           <Typography className="text-base lg:text-lg max-w-[800px]">
@@ -100,8 +78,8 @@ const WelcomeSection = () => {
               {t("nearest")}
             </button>
           </Link>
-        </Fade>
-      </Flex>
+        </Flex>
+      </Fade>
     </Flex>
   );
 };

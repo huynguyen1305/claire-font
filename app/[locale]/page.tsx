@@ -6,12 +6,21 @@ import TranslationsProvider from "@/components/TranslationsProvider/Translations
 import { Flex } from "antd";
 import initTranslations from "@/app/i18n";
 import ImageSection from "@/containers/Home/ImageSection";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: {
+    default:
+      "Trang chủ | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    template:
+      "%s | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+  },
+};
 const i18nNamespaces = ["translation"];
 
 const getDataBlog = async () => {
   const res = await fetch(
-    "https://claire.io.vn/wp-json/wp/v2/posts?categories=40"
+    "https://claire.io.vn/wp-json/wp/v2/posts?categories=40&_embed"
   );
   return res.json();
 };

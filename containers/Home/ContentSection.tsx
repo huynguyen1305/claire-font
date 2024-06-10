@@ -16,28 +16,29 @@ const CommonComponent = (
     <Flex
       className={`${
         shouldRevert ? "flex-col lg:flex-row-reverse" : "flex-col lg:flex-row"
-      } w-full items-center lg:items-center`}
+      } w-full items-center`}
     >
-      <Fade
-        direction={shouldRevert ? "right" : "left"}
-        // duration={500}
-        // delay={200}
-        className="w-1/2"
-      >
-        <img alt="image" src={imgSrc} className="w-full" />
-      </Fade>
+      <div className="w-full lg:w-1/2">
+        <Fade
+          direction={shouldRevert ? "right" : "left"}
+          delay={200}
+          triggerOnce
+        >
+          <img alt="image" src={imgSrc} className="w-full h-full" />
+        </Fade>
+      </div>
+
       <Flex
-        className={`w-full mt-4 lg:w-1/2 text-center ${
+        className={`w-full mt-4 lg:w-1/2 text-center gap-4 ${
           shouldRevert
             ? "lg:text-left lg:items-start lg:pr-10"
             : "lg:text-right lg:items-end lg:pl-10"
         }`}
         vertical
-        gap={20}
       >
         <Fade
           direction={shouldRevert ? "left" : "right"}
-          // duration={500}
+          triggerOnce
           delay={200}
         >
           <Typography className="text-3xl font-extrabold">{title}</Typography>
@@ -58,31 +59,31 @@ const ContentSection = () => {
 
   return (
     <div className="container">
-      <Flex vertical className="gap-[40px] lg:gap-0" align="center">
+      <Flex vertical className="gap-10 lg:gap-0" align="center">
         {CommonComponent(
           "/detail-homepage-1.png",
           t("medicalStandardTherapy"),
           t("desMedicalStandard"),
-          "CLAIRE WELLNESS"
+          "CLAIRE CLINIC"
         )}
         {CommonComponent(
           "/detail-homepage-2.png",
           t("treatments"),
           t("desTreatments"),
-          "CLAIRE WELLNESS",
+          "CLAIRE CLINIC",
           true
         )}
         {CommonComponent(
           "/detail-homepage-3.png",
           t("privacyStandard"),
           t("desPrivacyStandard"),
-          "CLAIRE WELLNESS"
+          "CLAIRE CLINIC"
         )}
         {CommonComponent(
           "/detail-homepage-4.png",
           t("productService"),
           t("desProductService"),
-          "CLAIRE WELLNESS",
+          "CLAIRE CLINIC",
           true
         )}
         {/* <Flex
@@ -104,9 +105,6 @@ const ContentSection = () => {
           </Typography>
         </Flex> */}
       </Flex>
-      <br />
-      <br />
-      <br />
     </div>
   );
 };

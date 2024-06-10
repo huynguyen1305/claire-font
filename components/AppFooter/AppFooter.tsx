@@ -107,7 +107,7 @@ const AppFooter = async ({ locale }: { locale: string }) => {
         </div>
       </div>
       <strong className="text-center block mx-auto mt-10">
-        © 2024 Claire Wellness. All rights reserved.
+        © 2024 Claire Clinic. All rights reserved.
       </strong>
     </footer>
   );
