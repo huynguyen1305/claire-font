@@ -1,64 +1,70 @@
 "use client";
 
-import { Divider, Flex, Input, Select, Typography } from "antd";
-import TextArea from "antd/es/input/TextArea";
+import { Modal } from "antd";
 import React from "react";
-
+import { Divider, Flex, Input, Select, Typography, Form } from "antd";
+import { useTranslation } from "react-i18next";
+import Link from "next/link";
+import Image from "next/image";
 import facebook from "@/assets/images/fb-02.svg";
 import ins from "@/assets/images/ins-01.svg";
 import mess from "@/assets/images/mess-03.svg";
-import Image from "next/image";
-import { useTranslation } from "react-i18next";
-import { Fade } from "react-awesome-reveal";
-import Link from "next/link";
 
-const FormSection = () => {
+const listDichVu = [
+  {
+    label: "Làm sạch & detox làn da",
+    value: "Làm sạch & detox làn da",
+  },
+  {
+    label: "Trị liệu chống lão hóa",
+    value: "Trị liệu chống lão hóa",
+  },
+  {
+    label: "Trị mụn",
+    value: "Trị mụn",
+  },
+  {
+    label: "Tư vấn thêm",
+    value: "Tư vấn thêm",
+  },
+];
+const listChiNhanh = [
+  {
+    label: "Claire Thảo Điền",
+    value: "Claire Thảo Điền",
+  },
+  {
+    label: "Claire Phú Mỹ Hưng",
+    value: "Claire Phú Mỹ Hưng",
+  },
+  {
+    label: "Claire Tân Bình",
+    value: "Claire Tân Bình",
+  },
+];
+
+const ModalTuVan = () => {
+  const [modalOpen, setModalOpen] = React.useState(false);
   const { t } = useTranslation();
-  const listDichVu = [
-    {
-      label: "Làm sạch & detox làn da",
-      value: "Làm sạch & detox làn da",
-    },
-    {
-      label: "Trị liệu chống lão hóa",
-      value: "Trị liệu chống lão hóa",
-    },
-    {
-      label: "Trị mụn",
-      value: "Trị mụn",
-    },
-    {
-      label: "Tư vấn thêm",
-      value: "Tư vấn thêm",
-    },
-  ];
-  const listChiNhanh = [
-    {
-      label: "Claire Thảo Điền",
-      value: "Claire Thảo Điền",
-    },
-    {
-      label: "Claire Phú Mỹ Hưng",
-      value: "Claire Phú Mỹ Hưng",
-    },
-    {
-      label: "Claire Tân Bình",
-      value: "Claire Tân Bình",
-    },
-  ];
-  return (
-    <div className="container">
-      <Flex className="pb-20 flex-col items-center lg:flex-row">
-        <Fade direction="left" className="w-full lg:w-2/3 h-full" triggerOnce>
-          <img
-            alt="img"
-            src="/contact-hompage.png"
-            className="w-full h-full object-cover"
-          />
-        </Fade>
 
-        <Flex vertical className="mt-4 lg:px-6 w-full lg:w-1/3">
-          <Fade cascade direction="up" duration={500} triggerOnce>
+  const [form] = Form.useForm();
+  return (
+    <>
+      <div
+        className="text-center text-white w-full cursor-pointer"
+        onClick={() => setModalOpen(true)}
+      >
+        Download <strong>CLAIRE ACNE HANDBOOK</strong> miễn phí
+      </div>
+      <Modal
+        centered
+        open={modalOpen}
+        footer={null}
+        onCancel={() => setModalOpen(false)}
+        onOk={() => setModalOpen(false)}
+      >
+        <Form className="w-full" form={form}>
+          <Flex vertical className="mt-4 lg:px-6 w-full">
             <Flex vertical className="" gap={8}>
               <div className="text-3xl font-extrabold">
                 {t("freeConsultation")}
@@ -90,12 +96,6 @@ const FormSection = () => {
                   size="large"
                   options={listChiNhanh}
                 />
-                <button
-                  className="buttonBlack"
-                  style={{ padding: "6px 24px", borderRadius: "8px" }}
-                >
-                  GỬI
-                </button>
               </Flex>
             </Flex>
             <br />
@@ -127,11 +127,24 @@ const FormSection = () => {
                 </Link>
               </Flex>
             </Flex>
-          </Fade>
-        </Flex>
-      </Flex>
-    </div>
+            <br />
+            <Link
+              href="https://wqcx0q.ph.files.1drv.com/y4mwh7bR7Xg5C3YKl7_l_HASLSEGZfr4zRzv34gnKawhQVO8sNQRmnWn3dJoqtKTaTxDIxhl12Nkdi4o_y_8jBaTEGScL_asB6S1xHVtTOD41Av_6QS59MjyeztEgLtHg44doxudP6dA3OodyO3lExrxrMItBjql0X67f4w7nuadIRir32Y9ydZosANqHe6XD8uJkpTfrdpIzTpn20mciZgJg"
+              className="text-center"
+            >
+              <button
+                className="buttonBlack"
+                style={{ padding: "6px 24px", borderRadius: "8px" }}
+                onClick={() => setModalOpen(false)}
+              >
+                Đặt hẹn & Tải CLAIRE ACNE HANDBOOK
+              </button>
+            </Link>
+          </Flex>
+        </Form>
+      </Modal>
+    </>
   );
 };
 
-export default FormSection;
+export default ModalTuVan;

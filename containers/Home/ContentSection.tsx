@@ -29,7 +29,7 @@ const CommonComponent = (
       </div>
 
       <Flex
-        className={`w-full mt-4 lg:w-1/2 text-center gap-4 ${
+        className={`w-full mt-6 lg:w-1/2 text-center gap-4 ${
           shouldRevert
             ? "lg:text-left lg:items-start lg:pr-10"
             : "lg:text-right lg:items-end lg:pl-10"
@@ -41,13 +41,21 @@ const CommonComponent = (
           triggerOnce
           delay={200}
         >
-          <Typography className="text-3xl font-extrabold">{title}</Typography>
-          <Typography className="text-sm md:text-base lg:text-lg lg:leading-10">
+          <Typography
+            className="text-3xl font-extrabold"
+            style={{ textWrap: "balance" }}
+          >
+            {title}
+          </Typography>
+          <Typography
+            className="text-sm md:text-base lg:text-lg lg:leading-10"
+            style={{ textWrap: "balance" }}
+          >
             {description}
           </Typography>
-          <button className={`${shouldRevert ? "buttonWhite" : "buttonBlack"}`}>
+          {/* <button className={`${shouldRevert ? "buttonWhite" : "buttonBlack"}`}>
             {category}
-          </button>
+          </button> */}
         </Fade>
       </Flex>
     </Flex>
@@ -64,26 +72,26 @@ const ContentSection = () => {
           "/detail-homepage-1.png",
           t("medicalStandardTherapy"),
           t("desMedicalStandard"),
-          "CLAIRE CLINIC"
+          ""
         )}
         {CommonComponent(
           "/detail-homepage-2.png",
           t("treatments"),
           t("desTreatments"),
-          "CLAIRE CLINIC",
+          "",
           true
         )}
         {CommonComponent(
           "/detail-homepage-3.png",
           t("privacyStandard"),
           t("desPrivacyStandard"),
-          "CLAIRE CLINIC"
+          ""
         )}
         {CommonComponent(
           "/detail-homepage-4.png",
           t("productService"),
           t("desProductService"),
-          "CLAIRE CLINIC",
+          "",
           true
         )}
         {/* <Flex

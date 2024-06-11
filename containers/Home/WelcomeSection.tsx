@@ -1,9 +1,8 @@
 "use client";
 
 import { Flex, Typography } from "antd";
-import Image from "next/image";
 import React from "react";
-
+import Image from "next/image";
 import CarouselContainer from "@/components/CarouselContainer/CarouselContainer";
 
 import minhbach from "@/assets/images/minhbach.png";
@@ -40,14 +39,21 @@ const WelcomeSection = () => {
         </Fade>
 
         <Fade direction="up" cascade delay={200} triggerOnce>
-          <ul className="flex flex-wrap lg:max-w-6xl mx-auto">
+          <ul className="flex flex-wrap lg:max-w-6xl mx-auto px-4">
             {guaranteeData.map((i) => (
               <li
                 key={i.text1}
-                className="flex flex-col items-center gap-4 w-1/2 lg:w-1/4 p-4 border hover:bg-black hover:text-white"
+                className="flex flex-col items-center w-1/2 lg:w-1/4 p-4"
                 style={{ transition: "all 0.2s linear" }}
               >
-                <Flex vertical gap={4}>
+                <Flex vertical className="items-center gap-2">
+                  <Image
+                    width={150}
+                    height={150}
+                    alt="image"
+                    className="w-32 h-32 rounded-[50%] cursor-pointer"
+                    src={i.imageSrc}
+                  />
                   <span className="text-center text-sm lg:text-base uppercase">
                     {i.text1}
                   </span>
@@ -68,7 +74,10 @@ const WelcomeSection = () => {
               {t("welcome")}
             </Typography>
           </Flex>
-          <Typography className="text-base lg:text-lg max-w-[800px]">
+          <Typography
+            className="text-base lg:text-lg max-w-[800px]"
+            style={{ textWrap: "balance" }}
+          >
             {t("detailWelcome")}
             <span className="font-extrabold">{t("boldDetailWelcome")}</span>
           </Typography>

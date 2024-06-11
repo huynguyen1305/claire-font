@@ -16,7 +16,7 @@ const getDetailPost = async (slug: any) => {
 
 const getRelatedPost = async () => {
   const res = await fetch(
-    `https://claire.io.vn/wp-json/wp/v2/posts?categories=40`
+    `https://claire.io.vn/wp-json/wp/v2/posts?categories=40&_embed`
   );
   const data = await res.json();
   return data;
@@ -57,7 +57,7 @@ export default async function DetailPage({
                 <Link href={`/blog/${item.slug}`}>
                   <img
                     alt="img"
-                    src={item.uagb_featured_image_src.full[0]}
+                    src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
                     className="w-full h-[220px]"
                   />
                 </Link>
@@ -68,7 +68,7 @@ export default async function DetailPage({
                 </Link>
                 <Typography
                   className="text-sm md:text-md lg:text-base"
-                  dangerouslySetInnerHTML={{ __html: item.uagb_excerpt }}
+                  dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                 ></Typography>
                 {/* <Link
                   href={`/blog/${item.slug}`}

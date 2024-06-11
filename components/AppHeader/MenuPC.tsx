@@ -19,7 +19,7 @@ const MenuPC = () => {
   const { t } = useTranslation();
 
   return (
-    <header>
+    <header className="sticky top-0 z-10 bg-white shadow-lg  ">
       <nav>
         <ul className="flex justify-between items-center container gap-4 uppercase font-extrabold text-xl pb-2">
           <li className="text-center block lg:hidden">
@@ -72,8 +72,8 @@ const MenuPC = () => {
               <Image
                 src={claireLogo}
                 alt="claireLogo"
-                width={250}
-                height={120}
+                width={220}
+                height={100}
               />
             </Link>
           </li>
@@ -96,7 +96,6 @@ const MenuPC = () => {
           transition: "left 0.3s linear",
           top: 0,
           left: isOpenMenuSidebar ? "0%" : "-200%",
-          // opacity: isOpenMenuSidebar ? 1 : 0,
           visibility: isOpenMenuSidebar ? "visible" : "hidden",
         }}
       >

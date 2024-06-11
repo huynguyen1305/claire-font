@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const BlogSection = ({ data }: { data: any }) => {
   const { t } = useTranslation();
-  console.log(data);
+  // console.log(data);
   return (
     <Flex vertical gap={60} align="center" className="container">
       <Fade direction="up" triggerOnce>

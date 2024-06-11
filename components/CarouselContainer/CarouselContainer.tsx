@@ -28,7 +28,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[800px] object-cover"
+            className="w-full max-h-[1080px] object-fit"
             src={anhNen}
           />
         </SwiperSlide>
@@ -37,7 +37,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[800px] object-cover"
+            className="w-full max-h-[1080px] object-fit"
             src={hydra}
           />
         </SwiperSlide>
@@ -46,7 +46,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[800px] object-cover"
+            className="w-full max-h-[1080px] object-fit"
             src={rezenerate}
           />
         </SwiperSlide>

@@ -143,7 +143,7 @@ const ContentSection = ({ data }: any) => {
         >
           <div
             dangerouslySetInnerHTML={{ __html: data.content.rendered }}
-            className="flex flex-col gap-4"
+            className="prose lg:prose-xl content-post"
           />
           {/* {data?.content && parse(data.content, options)} */}
         </div>

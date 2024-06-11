@@ -19,11 +19,11 @@ const page = async ({ params: { locale } }: any) => {
       locale={locale}
       resources={resources}
     >
-      <CarouselContainer />
+      {/* <CarouselContainer /> */}
       <div className="py-10 flex flex-col">
         <section className="container py-10 mb-10 flex flex-col gap-8">
           <h2 className="text-3xl text-center uppercase font-extrabold">
-            Claire Private Clinic
+            Claire Clinic
           </h2>
           <p className="text-center lg:w-2/3 mx-auto">
             {t("clairePrivateClinic")}

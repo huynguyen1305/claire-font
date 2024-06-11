@@ -19,23 +19,19 @@ import mess from "@/assets/images/mess-03.svg";
 import { Flex } from "antd";
 import Image from "next/image";
 import AppFooterV2 from "@/components/AppFooter/AppFooterV2";
+import Link from "next/link";
 
 const metaDataObj: Metadata = {
   title: {
-    default:
-      "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    default: "Claire Clinic",
     template:
-      "%s | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+      "%s | Hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
   },
   description:
-    "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp.",
+    "Claire Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp.",
   openGraph: {
-    title: "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
-    description:
-      "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
-    url: "https://www.claire.vn",
-    siteName:
-      "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+    title:
+      "Claire Clinic | Hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
     images: [
       {
         url: "https://www.claire.vn/claire-og.png",
@@ -45,14 +41,6 @@ const metaDataObj: Metadata = {
     ],
     locale: "vi_VN",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
-    description:
-      "Claire Private Clinic là hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp.",
-    site: "claire.vn",
-    images: ["https://www.claire.vn/claire-og.png"],
   },
 };
 
@@ -89,16 +77,36 @@ export default async function RootLayout({
             resources={resources}
           >
             <AppHeader />
-            <main className="min-h-screen">
+            <main style={{ minHeight: "100dvh" }}>
               <div>{children}</div>
             </main>
             <AppFooterV2 locale={locale} />
             <div className="fixed bottom-[3%] right-[2%] z-10 ">
               <Flex className="gap-4 flex-col">
                 <BtnScrollToTop />
-                <Image alt="Image" src={facebook} width={40} height={40} />
-                <Image alt="Image" src={ins} width={40} height={40} />
-                <Image alt="Image" src={mess} width={40} height={40} />
+                <div className="gap-4 flex-col hidden lg:flex">
+                  <Link
+                    href={"https://www.facebook.com/claireclinicvn/"}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image alt="Image" src={facebook} width={40} height={40} />
+                  </Link>
+                  <Link
+                    href={"https://www.instagram.com/claireclinicvn/"}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image alt="Image" src={ins} width={40} height={40} />
+                  </Link>
+                  <Link
+                    href={"https://m.me/claireclinicvn"}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Image alt="Image" src={mess} width={40} height={40} />
+                  </Link>
+                </div>
               </Flex>
             </div>
           </TranslationsProvider>

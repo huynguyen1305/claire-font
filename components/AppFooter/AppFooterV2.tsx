@@ -9,147 +9,238 @@ import logoWhite from "@/assets/images/claire-logo-white.svg";
 import facebook from "@/assets/images/fb-02.svg";
 import ins from "@/assets/images/ins-01.svg";
 import mess from "@/assets/images/mess-03.svg";
+import { HomeFilled } from "@ant-design/icons";
+
+import { FaMapMarkerAlt, FaPhoneAlt, FaRegClock } from "react-icons/fa";
+import { MdMail } from "react-icons/md";
+import { LIEN_HE_LIST } from "@/constants";
 
 const i18nNamespaces = ["translation"];
 
 const AppFooterV2 = async ({ locale }: { locale: string }) => {
   const { t } = await initTranslations(locale, i18nNamespaces);
+  const mockdata = LIEN_HE_LIST;
 
   return (
     <footer className="border-t-2 p-4 bg-zinc-800 text-zinc-200">
       <div className="container my-5 flex flex-col gap-6">
         <Flex justify="space-between" gap={20} className="flex-col xl:flex-row">
-          <Flex gap={40} className="justify-between xl:justify-evenly">
-            <Flex vertical gap={8}>
-              <Image
-                width={150}
-                height={150}
-                alt="image"
-                src={logoWhite}
-                className="mb-5"
-              />
-              <Link
-                href="https://maps.app.goo.gl/15cT2VSTuCcHB8Uf9"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm xl:text-base"
-              >
-                • 18 Trần Ngọc Diện, P.Thảo Điền, Quận 2, TP.HCM
+          <Flex gap={40} className="justify-between">
+            <Flex vertical gap={8} className="w-full lg:w-[55%]">
+              <Link href="/">
+                <Image
+                  width={150}
+                  height={150}
+                  alt="image"
+                  src={logoWhite}
+                  className="mb-5"
+                />
               </Link>
-              <Link
-                href="https://maps.app.goo.gl/REXk4wVMhpCAcxWu8"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm xl:text-base"
-              >
-                • 42 Đường số 17, Phú Mỹ Hưng, P. Tân Phú, Quận 7
-              </Link>
-              <Link
-                href="https://maps.app.goo.gl/4Gq5Z6hcnGemNjN99"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm xl:text-base"
-              >
-                • Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Q.Tân Bình
-              </Link>
-              <Flex className="gap-8 ">
-                <Image alt="Image" src={facebook} width={30} height={30} />
-                <Image alt="Image" src={ins} width={30} height={30} />
-                <Image alt="Image" src={mess} width={30} height={30} />
+              <p className="text-sm xl:text-base">{t("footerDes1")}</p>
+              <p className="text-sm xl:text-base">{t("footerDes2")}</p>
+
+              <div className="flex flex-col gap-6 mt-4 lg:hidden">
+                {mockdata.map((item, index) => (
+                  <div key={item.email} className="flex flex-col gap-2">
+                    <div
+                      className="text-xl lg:text-2xl"
+                      style={{ fontWeight: "700", color: "#fff" }}
+                    >
+                      {item.location}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaMapMarkerAlt />
+                      <Link
+                        href={item.addressLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm xl:text-base"
+                      >
+                        {item.address}
+                      </Link>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaPhoneAlt />
+                      <Link
+                        href={`tel:${item.telLink}`}
+                        className="text-sm xl:text-base"
+                      >
+                        {item.phone}
+                      </Link>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MdMail />
+                      <Link
+                        href={`mailto:${item.email}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm xl:text-base"
+                      >
+                        {item.email}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Flex gap={8} className="mt-4 justify-between">
+                <div>
+                  <div
+                    className="text-xl lg:text-2xl"
+                    style={{ fontWeight: "700", color: "#fff" }}
+                  >
+                    {t("link")}
+                  </div>
+                  <Flex vertical gap={8} className="mt-2">
+                    <Link href="/" className="text-sm xl:text-base">
+                      {t("homePage")}
+                    </Link>
+                    <Link href="/ve-chung-toi" className="text-sm xl:text-base">
+                      {t("aboutUs")}
+                    </Link>
+                    <Link href="/dich-vu" className="text-sm xl:text-base">
+                      {t("service")}
+                    </Link>
+
+                    <Link href="/lien-he" className="text-sm xl:text-base">
+                      {t("address")}
+                    </Link>
+                    <Link href="/blog" className="text-sm xl:text-base">
+                      {t("blog")}
+                    </Link>
+                  </Flex>
+                </div>
+                <div className="pr-8 pt-[3px]">
+                  <div
+                    className="text-xl lg:text-2xl"
+                    style={{ fontWeight: "700", color: "#fff" }}
+                  >
+                    Giờ mở cửa
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <FaRegClock />
+                    <div className="text-sm xl:text-base">9:00 - 19:00</div>
+                  </div>
+                  <br />
+                  <div
+                    className="text-xl lg:text-2xl"
+                    style={{ fontWeight: "700", color: "#fff" }}
+                  >
+                    Social Media
+                  </div>
+                  <Flex className="gap-4 mt-2">
+                    <Link
+                      href={"https://www.facebook.com/claireclinicvn/"}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image
+                        alt="Image"
+                        src={facebook}
+                        width={34}
+                        height={34}
+                      />
+                    </Link>
+                    <Link
+                      href={"https://www.instagram.com/claireclinicvn/"}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image alt="Image" src={ins} width={34} height={34} />
+                    </Link>
+                    <Link
+                      href={"https://m.me/claireclinicvn"}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Image alt="Image" src={mess} width={34} height={34} />
+                    </Link>
+                  </Flex>
+                </div>
+                <div className="pr-8 pt-[3px] hidden lg:block">
+                  <div
+                    className="text-xl lg:text-2xl"
+                    style={{ fontWeight: "700", color: "#fff" }}
+                  >
+                    Language
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <LanguageChangerDropdown />
+                  </div>
+                </div>
               </Flex>
             </Flex>
-            <Divider
-              type="vertical"
-              className="bg-white h-full hidden xl:block"
-            />
-            <Flex vertical gap={20} className="hidden sm:flex">
-              <p className="font-bold text-base xl:text-xl">{t("link")}</p>
-              <Flex vertical gap={4}>
-                <Link href="/" className="text-sm xl:text-base">
-                  • {t("homePage")}
-                </Link>
-                <Link href="/ve-chung-toi" className="text-sm xl:text-base">
-                  • {t("aboutUs")}
-                </Link>
-                <Link href="/dich-vu" className="text-sm xl:text-base">
-                  • {t("service")}
-                </Link>
-                <Link href="/" className="text-sm xl:text-base">
-                  • {t("agingTreatment")}
-                </Link>
-                <Link href="/" className="text-sm xl:text-base">
-                  • {t("customerFB")}
-                </Link>
-                <Link href="/lien-he" className="text-sm xl:text-base">
-                  • {t("address")}
-                </Link>
-                <Link href="/blog" className="text-sm xl:text-base">
-                  • {t("blog")}
-                </Link>
-              </Flex>
-            </Flex>
-            <Flex vertical gap={20} className="hidden md:flex">
-              <p className="font-bold text-base xl:text-xl">{t("openTime")}</p>
-              <Flex vertical gap={4}>
-                <p className="text-sm xl:text-base">• 9AM - 7PM</p>
-              </Flex>
-              <p className="font-bold text-base xl:text-xl">{t("location")}</p>
-              <Flex vertical gap={4}>
-                <p className="text-sm xl:text-base">• {t("hcmCity")}</p>
-              </Flex>
+
+            <Flex vertical className="hidden lg:flex w-[45%]">
+              <div className="flex flex-col gap-6">
+                {mockdata.map((item, index) => (
+                  <div key={item.email} className="flex flex-col gap-2">
+                    <div
+                      className="text-xl lg:text-2xl"
+                      style={{ fontWeight: "700", color: "#fff" }}
+                    >
+                      {item.location}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaMapMarkerAlt />
+                      <Link
+                        href={item.addressLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm xl:text-base"
+                      >
+                        {item.address}
+                      </Link>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FaPhoneAlt />
+                      <Link
+                        href={`tel:${item.telLink}`}
+                        className="text-sm xl:text-base"
+                      >
+                        {item.phone}
+                      </Link>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MdMail />
+                      <Link
+                        href={`mailto:${item.email}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm xl:text-base"
+                      >
+                        {item.email}
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </Flex>
           </Flex>
-          <Flex className="flex-row justify-between md:justify-normal xl:flex-col gap-5 md:gap-10 xl:gap-5">
-            <Flex vertical gap={20} className="flex sm:hidden">
-              <p className="font-bold text-base xl:text-xl">{t("link")}</p>
-              <Flex vertical gap={4}>
+          {/* <Flex className="flex-row justify-between md:justify-normal xl:flex-col gap-5 md:gap-10 xl:gap-5">
+            <Flex vertical gap={8} className="flex sm:hidden">
+              <div className="text-xl" style={{ fontWeight: "700" }}>
+                {t("link")}
+              </div>
+              <Flex vertical gap={8}>
                 <Link href="/" className="text-sm xl:text-base">
-                  • {t("homePage")}
+                  {t("homePage")}
                 </Link>
                 <Link href="/ve-chung-toi" className="text-sm xl:text-base">
-                  • {t("aboutUs")}
+                  {t("aboutUs")}
                 </Link>
                 <Link href="/dich-vu" className="text-sm xl:text-base">
-                  • {t("service")}
+                  {t("service")}
                 </Link>
-                <Link href="/" className="text-sm xl:text-base">
-                  • {t("agingTreatment")}
-                </Link>
-                <Link href="/" className="text-sm xl:text-base">
-                  • {t("customerFB")}
-                </Link>
+
                 <Link href="/lien-he" className="text-sm xl:text-base">
-                  • {t("address")}
+                  {t("address")}
                 </Link>
                 <Link href="/blog" className="text-sm xl:text-base">
-                  • {t("blog")}
+                  {t("blog")}
                 </Link>
               </Flex>
             </Flex>
-            <Flex vertical gap={20} className="md:hidden">
-              <p className="font-bold text-base xl:text-xl">{t("openTime")}</p>
-              <Flex vertical gap={4}>
-                <p className="text-sm xl:text-base">• 9AM - 7PM</p>
-              </Flex>
-              <p className="font-bold text-base xl:text-xl">{t("location")}</p>
-              <Flex vertical gap={4}>
-                <p className="text-sm xl:text-base">• {t("hcmCity")}</p>
-              </Flex>
-            </Flex>
-            <Flex vertical gap={20}>
-              <p className="font-bold text-base xl:text-xl">{t("callNow")}</p>
-              <Flex vertical gap={2}>
-                <Link href="tel:+84812345795" className="text-sm xl:text-base">
-                  • 08-12345-791
-                </Link>
-                <Link href="tel:+84812345795" className="text-sm xl:text-base">
-                  • 08-12345-785
-                </Link>
-                <Link href="tel:+84812345795" className="text-sm xl:text-base">
-                  • 08-12345-795
-                </Link>
-              </Flex>
-            </Flex>
+
             <Flex vertical gap={20} className="hidden sm:flex">
               <p className="font-bold text-base xl:text-xl">{t("signUpNow")}</p>
               <Flex>
@@ -160,8 +251,8 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
               </Flex>
               <LanguageChangerDropdown />
             </Flex>
-          </Flex>
-          <Flex vertical gap={20} className="flex sm:hidden">
+          </Flex> */}
+          {/* <Flex vertical gap={20} className="flex sm:hidden">
             <p className="font-bold text-base xl:text-xl">{t("signUpNow")}</p>
             <Flex>
               <Input placeholder="Email" />
@@ -170,11 +261,12 @@ const AppFooterV2 = async ({ locale }: { locale: string }) => {
               </Button>
             </Flex>
             <LanguageChangerDropdown />
-          </Flex>
+          </Flex> */}
         </Flex>
-        <p className="text-sm xl:text-base">{t("footerDes1")}</p>
-        <p className="text-sm xl:text-base">{t("footerDes2")}</p>
       </div>
+      <strong className="text-center block mx-auto mt-10 border-t-[1px] py-4">
+        © 2024 Claire Clinic. All rights reserved.
+      </strong>
     </footer>
   );
 };

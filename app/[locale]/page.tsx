@@ -11,9 +11,9 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     default:
-      "Trang chủ | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+      "Trang chủ | Claire Clinic - Hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
     template:
-      "%s | Claire Việt Nam - Claire Clinic, Claire Private Clinic, Claire VN",
+      "%s | Hệ thống cơ sở chăm sóc sức khoẻ làn da theo tiêu chuẩn y khoa cao cấp",
   },
 };
 const i18nNamespaces = ["translation"];
