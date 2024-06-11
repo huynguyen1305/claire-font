@@ -41,6 +41,8 @@ const metaDataObj: Metadata = {
     ],
     locale: "vi_VN",
     type: "website",
+    siteName: "Claire Clinic",
+    url: "https://www.claire.vn",
   },
 };
 
