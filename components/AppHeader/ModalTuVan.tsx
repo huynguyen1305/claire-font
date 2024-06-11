@@ -54,7 +54,7 @@ const ModalTuVan = () => {
         className="text-center text-white w-full cursor-pointer"
         onClick={() => setModalOpen(true)}
       >
-        Download <strong>CLAIRE ACNE HANDBOOK</strong> miễn phí
+        Tải <strong>CLAIRE ACNE HANDBOOK</strong> miễn phí
       </div>
       <Modal
         centered
