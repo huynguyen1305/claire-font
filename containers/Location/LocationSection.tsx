@@ -45,7 +45,7 @@ const LocationSection = () => {
       img: "/tanbinh.png",
       mapImg:
         "https://maps.google.com/maps?q=him%20lam%203e%20t%C3%A2n%20b%C3%ACnh&t=m&z=15&output=embed&iwloc=near",
-      address: "Số 14 Khu Biệt Thự Him Lam 3E, Phổ Quang, P.2, Q.Tân Bình",
+      address: "Số 14 Khu Biệt Thự Him Lam, 3E Phổ Quang, P.2, Q.Tân Bình",
       email: "claire.tanbinh@gmail.com",
       phone: "08-12345-791",
       addressLink: "https://maps.app.goo.gl/4Gq5Z6hcnGemNjN99",
