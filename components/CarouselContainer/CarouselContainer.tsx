@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
 
-import anhNen from "@/assets/images/anh-nen.jpg";
-import hydra from "@/assets/images/hydra.png";
-import rezenerate from "@/assets/images/rezenerate.png";
+import anhNen from "@/assets/images/banner1.jpg";
+import hydra from "@/assets/images/banner2.jpg";
+import rezenerate from "@/assets/images/banner3.jpg";
 
 import React from "react";
 
@@ -28,7 +28,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[1080px] object-fit"
+            className="w-full max-h-[100%] object-cover"
             src={anhNen}
           />
         </SwiperSlide>
@@ -37,7 +37,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[1080px] object-fit"
+            className="w-full max-h-[100%] object-cover"
             src={hydra}
           />
         </SwiperSlide>
@@ -46,7 +46,7 @@ const CarouselContainer = () => {
             width={1920}
             height={800}
             alt="image"
-            className="w-full max-h-[1080px] object-fit"
+            className="w-full max-h-[100%] object-cover"
             src={rezenerate}
           />
         </SwiperSlide>
