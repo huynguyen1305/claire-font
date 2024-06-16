@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { Divider, Flex, Input, Select, Typography } from "antd";
+import { Divider, Flex, Form, Input, Select, Typography } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
 
@@ -12,40 +13,69 @@ import { useTranslation } from "react-i18next";
 import { Fade } from "react-awesome-reveal";
 import Link from "next/link";
 
+const listDichVu = [
+  {
+    value: "sach-da-detox",
+    label: "Làm sạch & detox làn da",
+  },
+  {
+    value: "chong-lao-hoa",
+    label: "Trị liệu chống lão hóa",
+  },
+  {
+    value: "tri-mun",
+    label: "Trị mụn",
+  },
+  {
+    value: "tu-van-them",
+    label: "Tư vấn thêm",
+  },
+];
+const listChiNhanh = [
+  {
+    value: "thao-dien",
+    label: "Claire Thảo Điền",
+  },
+  {
+    value: "phu-my-hung",
+    label: "Claire Phú Mỹ Hưng",
+  },
+  {
+    value: "tan-binh",
+    label: "Claire Tân Bình",
+  },
+];
+
 const FormSection = () => {
   const { t } = useTranslation();
-  const listDichVu = [
-    {
-      label: "Làm sạch & detox làn da",
-      value: "Làm sạch & detox làn da",
-    },
-    {
-      label: "Trị liệu chống lão hóa",
-      value: "Trị liệu chống lão hóa",
-    },
-    {
-      label: "Trị mụn",
-      value: "Trị mụn",
-    },
-    {
-      label: "Tư vấn thêm",
-      value: "Tư vấn thêm",
-    },
-  ];
-  const listChiNhanh = [
-    {
-      label: "Claire Thảo Điền",
-      value: "Claire Thảo Điền",
-    },
-    {
-      label: "Claire Phú Mỹ Hưng",
-      value: "Claire Phú Mỹ Hưng",
-    },
-    {
-      label: "Claire Tân Bình",
-      value: "Claire Tân Bình",
-    },
-  ];
+
+  const [valueChiNhanh, setValueChiNhanh] = React.useState<any>(null);
+  const [valueDichVu, setValueDichVu] = React.useState<any>(null);
+  const [valueName, setValueName] = React.useState<any>("");
+  const [valueEmail, setValueEmail] = React.useState<any>("");
+  const [valueSDT, setValueSDT] = React.useState<any>("");
+
+  const disableBtn =
+    valueName.length > 0 &&
+    valueEmail.length > 0 &&
+    valueSDT.length > 0 &&
+    valueDichVu &&
+    valueChiNhanh;
+
+  const handleClickSendEmail = async () => {
+    const req = await fetch(`/api/send`, {
+      method: "POST",
+      body: JSON.stringify({
+        name: valueName,
+        email: valueEmail,
+        phone: valueSDT,
+        dichvu: valueDichVu,
+        chinhanh: valueChiNhanh,
+      }),
+    });
+    console.log(req);
+  };
+
   return (
     <div className="container">
       <Flex className="pb-20 flex-col items-center lg:flex-row">
@@ -69,6 +99,7 @@ const FormSection = () => {
               </div>
             </Flex>
             <br />
+
             <Flex vertical gap={24}>
               <Input placeholder="Họ Tên..." />
 
@@ -92,12 +123,32 @@ const FormSection = () => {
                 />
                 <button
                   className="buttonBlack"
-                  style={{ padding: "6px 24px", borderRadius: "8px" }}
+                  style={{
+                    padding: "6px 24px",
+                    borderRadius: "8px",
+                    cursor: !disableBtn ? "not-allowed" : "pointer",
+                  }}
+                  onClick={handleClickSendEmail}
+                  disabled={!disableBtn}
                 >
-                  GỬI
+                  <Link
+                    href={
+                      !disableBtn
+                        ? "javascript:void(0)"
+                        : "https://wqcx0q.ph.files.1drv.com/y4mwh7bR7Xg5C3YKl7_l_HASLSEGZfr4zRzv34gnKawhQVO8sNQRmnWn3dJoqtKTaTxDIxhl12Nkdi4o_y_8jBaTEGScL_asB6S1xHVtTOD41Av_6QS59MjyeztEgLtHg44doxudP6dA3OodyO3lExrxrMItBjql0X67f4w7nuadIRir32Y9ydZosANqHe6XD8uJkpTfrdpIzTpn20mciZgJg"
+                    }
+                    className="text-center"
+                    style={{
+                      cursor: !disableBtn ? "not-allowed" : "pointer",
+                      color: "inherit",
+                    }}
+                  >
+                    Gửi
+                  </Link>
                 </button>
               </Flex>
             </Flex>
+
             <br />
             <Flex vertical gap={12} align="center">
               <Typography className="text-gray-600 capitalize">

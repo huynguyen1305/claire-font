@@ -119,6 +119,9 @@ h6 {
   &:hover {
     @apply bg-white text-black;
   }
+  @media screen and (max-width: 992px) {
+    @apply py-1 px-2 text-sm;
+  }
 }
 
 .buttonWhite {
@@ -228,7 +231,7 @@ h6 {
   }
 }
 
-.ant-select-selection-item {
+.language-select .ant-select-selection-item {
   color: white
 }
 

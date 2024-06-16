@@ -19,7 +19,7 @@ const MenuPC = () => {
   const { t } = useTranslation();
 
   return (
-    <header className="sticky top-0 z-10 bg-white shadow-lg  ">
+    <header className="sticky top-[-1px] z-10 bg-white shadow-lg">
       <nav>
         <ul className="flex justify-between items-center container gap-4 uppercase font-extrabold text-xl pb-2">
           <li className="text-center block lg:hidden">

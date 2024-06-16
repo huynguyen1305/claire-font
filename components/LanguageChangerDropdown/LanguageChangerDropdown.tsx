@@ -40,10 +40,10 @@ export default function LanguageChangerDropdown() {
   return (
     <Select
       defaultValue={currentLocale}
-      style={{ width: 140, color: "white" }}
+      style={{ width: 140 }}
       onChange={handleChange}
       variant="borderless"
-      className="border-[1px] border-gray-500"
+      className="border-[1px] border-gray-500 language-select"
       options={[
         {
           value: "vi",

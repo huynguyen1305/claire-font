@@ -11,7 +11,13 @@ const AppHeader = () => {
           <div className="hidden lg:block">
             <LanguageChangerDropdown />
           </div>
-          <ModalTuVan />
+          <ModalTuVan
+            text={
+              <>
+                Tải <strong>CLAIRE ACNE HANDBOOK</strong> miễn phí
+              </>
+            }
+          />
           <div className="hidden lg:flex lg:flex-shrink-0 gap-2">
             Hotline:
             <Link href="tel:+84812345795">
