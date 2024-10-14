@@ -3,6 +3,7 @@ import ContentSection from "@/containers/blog/ContentSection";
 import Head from "next/head";
 import { Col, Flex, Row, Typography } from "antd";
 import Link from "next/link";
+import Image from "next/image";
 
 export const revalidate = 10;
 
@@ -50,35 +51,38 @@ export default async function DetailPage({
         các bài viết liên quan
       </h3>
       <Row gutter={[20, 20]}>
-        {relatedPost &&
-          relatedPost.map((item: any) => (
-            <Col key={item.id} span={24} lg={8}>
-              <Flex vertical gap={16} className="h-full">
-                <Link href={`/blog/${item.slug}`}>
-                  <img
-                    alt="img"
-                    src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
-                    className="w-full h-[220px]"
-                  />
-                </Link>
-                <Link href={`/blog/${item.slug}`}>
-                  <Typography className="text-base md:text-lg lg:text-xl font-extrabold">
-                    {item.title.rendered}
-                  </Typography>
-                </Link>
-                <Typography
-                  className="text-sm md:text-md lg:text-base"
-                  dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
-                ></Typography>
-                {/* <Link
+        {relatedPost
+          ? relatedPost.map((item: any) => (
+              <Col key={item.id} span={24} lg={8}>
+                <Flex vertical gap={16} className="h-full">
+                  <Link href={`/blog/${item.slug}`}>
+                    <Image
+                      alt="img"
+                      src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
+                      width={400}
+                      height={400}
+                      className="object-cover aspect-square w-full"
+                    />
+                  </Link>
+                  <Link href={`/blog/${item.slug}`}>
+                    <Typography className="text-base md:text-lg lg:text-xl font-extrabold">
+                      {item.title.rendered}
+                    </Typography>
+                  </Link>
+                  <Typography
+                    className="text-sm md:text-md lg:text-base"
+                    dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+                  ></Typography>
+                  {/* <Link
                   href={`/blog/${item.slug}`}
                   className="underline text-xs lg:text-sm font-light cursor-pointer mt-auto"
                 >
                   <Typography>READ MORE</Typography>
                 </Link> */}
-              </Flex>
-            </Col>
-          ))}
+                </Flex>
+              </Col>
+            ))
+          : null}
       </Row>
       <br />
       <br />

@@ -1,6 +1,7 @@
 "use client";
 
 import { Col, Flex, Row, Typography } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
@@ -8,7 +9,7 @@ import { useTranslation } from "react-i18next";
 
 const BlogSection = ({ data }: { data: any }) => {
   const { t } = useTranslation();
-  // console.log(data);
+  console.log(data);
   return (
     <Flex vertical gap={60} align="center" className="container">
       <Fade direction="up" triggerOnce>
@@ -21,10 +22,12 @@ const BlogSection = ({ data }: { data: any }) => {
             <Fade direction="up" damping={0.5} triggerOnce>
               <Flex vertical gap={16} className="h-full">
                 <Link href={`/blog/${item.slug}`}>
-                  <img
+                  <Image
                     alt="img"
                     src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
-                    className="w-full h-[220px]"
+                    width={430}
+                    height={430}
+                    className="object-cover aspect-square w-full"
                   />
                 </Link>
                 <Link href={`/blog/${item.slug}`}>
@@ -33,8 +36,8 @@ const BlogSection = ({ data }: { data: any }) => {
                   </Typography>
                 </Link>
                 <Typography
-                  className="text-sm md:text-md lg:text-base line-clamp-4"
-                  dangerouslySetInnerHTML={{ __html: item.uagb_excerpt }}
+                  className="text-sm md:text-md lg:text-base line-clamp-4 "
+                  dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                 ></Typography>
                 {/* <Link href={`/blog/${item.slug}`} className="mt-auto">
                   <Typography className="underline text-xs lg:text-sm font-light cursor-pointer">

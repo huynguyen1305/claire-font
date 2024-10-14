@@ -1,4 +1,5 @@
 import { Col, Flex, Row, Typography } from "antd";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -22,10 +23,12 @@ const BlogPage = async () => {
             <Col key={item.id} span={24} lg={8}>
               <Flex vertical gap={16} className="h-full">
                 <Link href={`/blog/${item.slug}`}>
-                  <img
+                  <Image
                     alt="img"
                     src={item?._embedded?.["wp:featuredmedia"][0]?.source_url}
-                    className="w-full h-[220px]"
+                    width={400}
+                    height={400}
+                    className="object-cover aspect-square w-full"
                   />
                 </Link>
                 <Link href={`/blog/${item.slug}`}>
